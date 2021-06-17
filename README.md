@@ -1,1 +1,1 @@
-# teeUp
+# Authentication Boilerplate
