@@ -38,6 +38,10 @@ app.use(
   })
 );
 
+
+
+app.use(routes);
+
 // Error Handling
 
 app.use((_req, _res, next) => {
@@ -68,9 +72,5 @@ app.use((err, _req, res, _next) => {
     stack: isProduction ? null : err.stack,
   });
 });
-
-
-app.use(routes);
-
 
 module.exports = app;
