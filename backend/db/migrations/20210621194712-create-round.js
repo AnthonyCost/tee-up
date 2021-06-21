@@ -11,12 +11,12 @@ module.exports = {
       courseId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        // references the golfCourse table
+        references: { model: "GolfCourses" },
       },
       groupId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        // references the group table
+        references: { model: "Groups" },
       },
       ruleset: {
         type: Sequelize.STRING,

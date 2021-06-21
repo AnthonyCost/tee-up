@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   GolfCourse.associate = function (models) {
     // associations can be defined here
     // golf course can have many rounds
+    GolfCourse.hasMany(models.Round, { foreignKey: "courseId" });
   };
   return GolfCourse;
 };

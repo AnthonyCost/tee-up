@@ -11,7 +11,7 @@ module.exports = {
       userId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        // references the users table
+        references: { model: "Users" },
       },
       status: {
         allowNull: false,
@@ -20,7 +20,7 @@ module.exports = {
       roundId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        // references the rounds table
+        references: { model: "Rounds" },
       },
       createdAt: {
         allowNull: false,
