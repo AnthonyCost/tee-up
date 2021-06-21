@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Group.associate = function(models) {
     // associations can be defined here
+    // a group can have many rounds
   };
   return Group;
 };

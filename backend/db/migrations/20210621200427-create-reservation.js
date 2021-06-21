@@ -1,33 +1,26 @@
 "use strict";
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("Rounds", {
+    return queryInterface.createTable("Reservations", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      courseId: {
+      userId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        // references the golfCourse table
+        // references the users table
       },
-      groupId: {
+      status: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+      },
+      roundId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        // references the group table
-      },
-      ruleset: {
-        type: Sequelize.STRING,
-      },
-      startTime: {
-        allowNull: false,
-        type: Sequelize.DATE,
-      },
-      holes: {
-        allowNull: false,
-        type: Sequelize.NUMERIC,
+        // references the rounds table
       },
       createdAt: {
         allowNull: false,
@@ -40,6 +33,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable("Rounds");
+    return queryInterface.dropTable("Reservations");
   },
 };
