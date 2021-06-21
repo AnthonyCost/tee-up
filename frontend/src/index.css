@@ -1,1 +1,14 @@
 /* TODO Add site wide styles */
+
+/* color PALETTE:
+text: #FEFEE3;
+Div: #0D1F2D
+Background color: #001B2E;
+Navbar reg: #2C6E49
+Navbar hover: #4C956C
+*/
+
+body {
+  background-color: #001b2e;
+  color: #fefee3;
+}
