@@ -17,6 +17,14 @@ module.exports = (sequelize, DataTypes) => {
     Round.belongsTo(models.GolfCourse, { foreignKey: "courseId" });
     // a round belongs to one group
     Round.belongsTo(models.Group, { foreignKey: "groupId" });
+
+    // through reservations
+    const columnMapping = {
+      through: "Reservation",
+      otherKey: "userId",
+      foreignKey: "roundId",
+    };
+    Round.belongsToMany(models.User, columnMapping);
   };
   return Round;
 };
