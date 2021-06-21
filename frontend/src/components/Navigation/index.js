@@ -24,7 +24,7 @@ function Navigation({ isLoaded }) {
     <ul>
       <li>
         <NavLink exact to="/">
-          Home
+          <img src="" alt="logo"/>
         </NavLink>
         {isLoaded && sessionLinks}
       </li>
