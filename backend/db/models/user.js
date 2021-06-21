@@ -99,14 +99,14 @@ module.exports = (sequelize, DataTypes) => {
       otherKey: "roundId",
       foreignKey: "userId",
     };
-    User.belongsToMany(models.Round, columnMapping);
+    User.hasMany(models.Round, columnMapping);
     // A user can have many groups THROUGH the userGroup table
     const columnMapping2 = {
       through: "UserGroup",
       otherKey: "groupId",
       foreignKey: "userId",
     };
-    User.belongsToMany(models.Round, columnMapping2);
+    User.hasMany(models.Group, columnMapping2);
   };
   return User;
 };
