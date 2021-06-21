@@ -21,3 +21,11 @@ label {
 input {
   padding-left: 5px;
 }
+#homeLogo {
+  height: 40px;
+  width: 40px;
+}
+#homeLogo:hover {
+  transition: 500ms;
+  background-color: #4c956c;
+}
