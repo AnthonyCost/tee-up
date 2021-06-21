@@ -86,9 +86,11 @@ module.exports = (sequelize, DataTypes) => {
 };
 
   // Set up associations here
-  
+
   User.associate = function(models) {
     // associations can be defined here
+    // A user can have many groups THROUGH the userGroup table
+    // A user can have many reservations
   };
   return User;
 };

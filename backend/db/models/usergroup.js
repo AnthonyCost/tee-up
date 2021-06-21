@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   UserGroup.associate = function(models) {
     // associations can be defined here
+    // this is a through table so this should be empty!
   };
   return UserGroup;
 };

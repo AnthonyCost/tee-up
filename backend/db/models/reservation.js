@@ -7,6 +7,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Reservation.associate = function(models) {
     // associations can be defined here
+    // this is a through table so this should be empty!
+    // but here is what the relation should be: a user can have many reservations and a reservation belongs to a round
   };
   return Reservation;
 };
