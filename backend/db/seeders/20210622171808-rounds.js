@@ -13,8 +13,8 @@ module.exports = {
       "Rounds",
       [
         {
-          courseId: 21,
-          groupId: 13,
+          courseId: golfCourses[0].id,
+          groupId: groups[0].id,
           ruleset: "Scramble",
           startTime: "2004-10-19 10:23:54",
           holes: 9,
@@ -22,8 +22,8 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          courseId: 21,
-          groupId: 13,
+          courseId: golfCourses[4].id,
+          groupId: groups[2].id,
           ruleset: "Standard",
           startTime: "2004-10-19 10:23:54",
           holes: 18,
@@ -31,8 +31,8 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          courseId: 21,
-          groupId: 13,
+          courseId: golfCourses[2].id,
+          groupId: groups[1].id,
           ruleset: "PGA",
           startTime: "2004-10-19 10:23:54",
           holes: 18,

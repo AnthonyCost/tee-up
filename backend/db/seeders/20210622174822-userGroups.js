@@ -5,7 +5,6 @@ const { Group, User } = db;
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-
     const users = await User.findAll();
     const groups = await Group.findAll();
 
@@ -13,20 +12,20 @@ module.exports = {
       "UserGroups",
       [
         {
-          userId: 13,
-          groupId: 13,
+          userId: users[0].id,
+          groupId: groups[0].id,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          userId: 14,
-          groupId: 14,
+          userId: userId[1].id,
+          groupId: groups[1].id,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          userId: 15,
-          groupId: 15,
+          userId: userId[2].id,
+          groupId: groups[2].id,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
