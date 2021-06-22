@@ -1,34 +1,30 @@
 "use strict";
 
 // userId: DataTypes.INTEGER,
-// status: DataTypes.BOOLEAN,
-// roundId: DataTypes.INTEGER,
+// groupId: DataTypes.INTEGER,
 // createdAt: new Date(),
 // updatedAt: new Date(),
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert(
-      "Reservations",
+      "UserGroups",
       [
         {
           userId: 1,
-          status: false,
-          roundId: 1,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          userId: 3,
-          status: true,
-          roundId: 2,
+          groupId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
           userId: 2,
-          status: true,
-          roundId: 3,
+          groupId: 2,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 3,
+          groupId: 3,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -38,6 +34,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete("Reservations", null, {});
+    return queryInterface.bulkDelete("UserGroups", null, {});
   },
 };
