@@ -18,13 +18,13 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          userId: userId[1].id,
+          userId: users[1].id,
           groupId: groups[1].id,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          userId: userId[2].id,
+          userId: users[2].id,
           groupId: groups[2].id,
           createdAt: new Date(),
           updatedAt: new Date(),
