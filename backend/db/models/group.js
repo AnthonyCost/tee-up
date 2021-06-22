@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       hostUserId: DataTypes.INTEGER,
       playStyle: DataTypes.STRING,
       description: DataTypes.TEXT,
+      groupName: DataTypes.STRING,
     },
     {}
   );
