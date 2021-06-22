@@ -5,6 +5,7 @@ const { Round, User } = db;
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
+    // findAll methods here
     const users = await User.findAll();
     const rounds = await Round.findAll();
 

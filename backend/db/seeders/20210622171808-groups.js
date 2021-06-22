@@ -1,11 +1,11 @@
 "use strict";
 
-const db = require('../models');
-const {User} = db;
+const db = require("../models");
+const { User } = db;
 
 module.exports = {
-
   up: async (queryInterface, Sequelize) => {
+    // findAll methods here
 
     const users = await User.findAll();
 

@@ -5,6 +5,7 @@ const { Group, User } = db;
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
+    // findAll methods here
     const users = await User.findAll();
     const groups = await Group.findAll();
 
