@@ -1,12 +1,19 @@
 "use strict";
 
+const db = require('../models');
+const {User} = db;
+
 module.exports = {
-  up: (queryInterface, Sequelize) => {
+
+  up: async (queryInterface, Sequelize) => {
+
+    const users = await User.findAll();
+
     return queryInterface.bulkInsert(
       "Groups",
       [
         {
-          hostUserId: 1,
+          hostUserId: users[0].id,
           playStyle: "Casual",
           description: "Still learning!",
           groupName: "Beginners here!",
@@ -14,7 +21,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          hostUserId: 2,
+          hostUserId: users[1].id,
           playStyle: "Professional",
           description: "We are a group of PGA level players",
           groupName: "The Pros",
@@ -22,7 +29,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          hostUserId: 3,
+          hostUserId: users[2].id,
           playStyle: "Competitive",
           description: "Playing for money!",
           groupName: "Gamblers",

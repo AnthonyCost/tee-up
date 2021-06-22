@@ -1,30 +1,32 @@
 "use strict";
 
-// userId: DataTypes.INTEGER,
-// groupId: DataTypes.INTEGER,
-// createdAt: new Date(),
-// updatedAt: new Date(),
+const db = require("../models");
+const { Group, User } = db;
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
+  up: async (queryInterface, Sequelize) => {
+
+    const users = await User.findAll();
+    const groups = await Group.findAll();
+
     return queryInterface.bulkInsert(
       "UserGroups",
       [
         {
-          userId: 1,
-          groupId: 1,
+          userId: 13,
+          groupId: 13,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          userId: 2,
-          groupId: 2,
+          userId: 14,
+          groupId: 14,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          userId: 3,
-          groupId: 3,
+          userId: 15,
+          groupId: 15,
           createdAt: new Date(),
           updatedAt: new Date(),
         },

@@ -1,34 +1,34 @@
 "use strict";
 
-// userId: DataTypes.INTEGER,
-// status: DataTypes.BOOLEAN,
-// roundId: DataTypes.INTEGER,
-// createdAt: new Date(),
-// updatedAt: new Date(),
+const db = require("../models");
+const { Round, User } = db;
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
+  up: async (queryInterface, Sequelize) => {
+    const users = await User.findAll();
+    const rounds = await Round.findAll();
+
     return queryInterface.bulkInsert(
       "Reservations",
       [
         {
-          userId: 1,
+          userId: 13,
           status: false,
-          roundId: 1,
+          roundId: 7,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          userId: 3,
+          userId: 14,
           status: true,
-          roundId: 2,
+          roundId: 8,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          userId: 2,
+          userId: 15,
           status: true,
-          roundId: 3,
+          roundId: 9,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
