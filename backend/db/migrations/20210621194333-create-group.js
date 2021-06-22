@@ -19,6 +19,10 @@ module.exports = {
       description: {
         type: Sequelize.TEXT,
       },
+      groupName: {
+        allowNull: false,
+        type: Sequelize.STRING(30),
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
