@@ -8,7 +8,7 @@ const setGroups = (groups) => ({
   groups,
 });
 
-// Define Thunks
+// Define Thunk creators
 export const getGroups = () => async (dispatch) => {
   const res = await csrfFetch("/api/groups");
   const groups = await res.json();

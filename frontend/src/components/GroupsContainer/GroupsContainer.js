@@ -11,8 +11,7 @@ import GroupRow from "../GroupRow";
 const GroupsContainer = () => {
   // Declare variables from hooks
   const dispatch = useDispatch();
-  const groups = useSelector((state) => Object.values(state.users));
-  //
+  const groups = useSelector((state) => Object.values(state.groups));
 
   useEffect(() => {
     dispatch(getGroups());
