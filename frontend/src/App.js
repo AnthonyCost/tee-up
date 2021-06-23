@@ -18,11 +18,14 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/signup">
+          <Route exact path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/groups">
+          <Route exact path="/groups">
             <GroupsContainer />
+          </Route>
+          <Route exact path="/groups/:id">
+            <h1>Path Hit!</h1>
           </Route>
         </Switch>
       )}

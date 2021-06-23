@@ -21,18 +21,19 @@ function Navigation({ isLoaded }) {
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">
-          <img
-            src="https://user-images.githubusercontent.com/35717793/122841755-c9674f00-d2b0-11eb-9875-cd58bf97a00b.png"
-            alt="home"
-            id="homeLogo"
-          />
-        </NavLink>
-        {isLoaded && sessionLinks}
-      </li>
-    </ul>
+    <div className="navBar">
+      <NavLink className="navBarLink" exact to="/">
+        <img
+          src="https://user-images.githubusercontent.com/35717793/122841755-c9674f00-d2b0-11eb-9875-cd58bf97a00b.png"
+          alt="home"
+          id="homeLogo"
+        />
+      </NavLink>
+      {isLoaded && sessionLinks}
+      <NavLink className="navBarLink" exact to="/groups">
+        <a>Groups</a>
+      </NavLink>
+    </div>
   );
 }
 

@@ -1,22 +1,10 @@
-.tableContainer {
+.cardContainer {
   width: 75%;
   margin: auto;
-  display: flex;
-  justify-content: center;
-}
-
-.table {
-  width: 100%;
-  border: thin solid black;
-  padding: 0.35rem;
-  border-radius: 0.25rem;
-}
-
-.thead th {
-  border-bottom: thin solid black;
-  padding: 0.35rem;
-}
-
-.tbody td {
-  padding: 0.35rem;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  column-gap: 10px;
+  row-gap: 15px;
+  justify-items: center;
 }

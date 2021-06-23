@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "groupId",
     };
     Group.belongsToMany(models.User, columnMapping);
+    Group.belongsTo(models.User, { as: "host", foreignKey: "hostUserId" });
   };
   return Group;
 };

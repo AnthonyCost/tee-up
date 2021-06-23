@@ -9,7 +9,65 @@ Navbar hover: #4C956C
 */
 
 body {
-  background-color: #001b2e;
-  color: #fefee3;
+  background-color: #00212e;
+  color: #ffffff;
   font-family: "Montserrat", sans-serif;
+}
+
+/* Cards */
+
+.cardContainer {
+  width: 600px;
+  overflow: hidden;
+  background-color: #373f51;
+  margin: 10px;
+  transition: 0.4s;
+  animation: ease-in-out;
+}
+
+.cardContainer:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px -5px black;
+}
+
+.imageContainer img {
+  overflow: hidden;
+  height: 450px;
+  transition: 0.4s;
+  animation: ease-in-out;
+}
+
+.cardContainer:hover .imageContainer img {
+  filter: blur(4px);
+}
+
+.cardTitle {
+  margin-top: 0.25rem;
+  padding: 0%;
+  display: flex;
+  justify-content: center;
+}
+
+.cardSubTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.cardDescription {
+  display: flex;
+  justify-content: center;
+}
+
+.cardBtn p {
+  color: white;
+  margin-bottom: 0%;
+  text-decoration: none;
+  transition: 0.4s;
+  animation: ease-in-out;
+  display: flex;
+  justify-content: center;
+}
+
+.cardBtn:hover p {
+  background-color: #4c956c;
 }
