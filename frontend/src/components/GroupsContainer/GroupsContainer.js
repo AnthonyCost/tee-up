@@ -28,7 +28,9 @@ const GroupsContainer = () => {
             <th>description</th>
             <th>groupName</th>
             <tbody>
-              {/* groups.map((group) => <GroupRow key={group.id} group={group} />) */}
+              {groups.map((group) => (
+                <GroupRow key={group.id} group={group} />
+              ))}
             </tbody>
           </tr>
         </thead>
