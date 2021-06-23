@@ -25,7 +25,7 @@ function App() {
             <GroupsContainer />
           </Route>
           <Route exact path="/groups/:id">
-            <h1>Path Hit!</h1>
+            <GroupPage />
           </Route>
         </Switch>
       )}
