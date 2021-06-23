@@ -1,6 +1,8 @@
+import styles from "./GroupCard.css";
+
 const GroupCard = ({ group }) => {
   return (
-    <div className="card-container">
+    <div className={styles.cardContainer}>
       <div className="image-container">
         <img
           src={
@@ -10,16 +12,16 @@ const GroupCard = ({ group }) => {
           }
         />
       </div>
-      <div className="card-title">
+      <div className={styles.cardTitle}>
         <h2>{group.groupName}</h2>
       </div>
-      <div className="card-subTitle">
+      <div className={styles.cardSubTitle}>
         <h3>Hosted by: {group.hostUserId}</h3>
       </div>
-      <div className="card-description">
+      <div className={styles.cardDescription}>
         <p>{group.description}</p>
       </div>
-      <div className="card-button">
+      <div className={styles.cardBtn}>
         <a>More Info</a>
       </div>
     </div>
