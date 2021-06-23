@@ -27,13 +27,13 @@ const GroupsContainer = () => {
             <th>playStyle</th>
             <th>description</th>
             <th>groupName</th>
-            <tbody className={styles.tbody}>
-              {groups.map((group) => (
-                <GroupRow key={group.id} group={group} />
-              ))}
-            </tbody>
           </tr>
         </thead>
+        <tbody className={styles.tbody}>
+          {groups.map((group) => (
+            <GroupRow key={group.id} group={group} />
+          ))}
+        </tbody>
       </table>
     </div>
   );
