@@ -1,10 +1,17 @@
 // Import hooks from 'react'. Which hook is meant for causing effects?
 // Import hooks from 'react-redux'
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./GroupsContainer.module.css";
 // import other data here
 
 const GroupsContainer = () => {
+  // Declare variables from hooks
+  const dispatch = useDispatch();
+  const 
+  //
+
   return (
     <div>
       <table>
