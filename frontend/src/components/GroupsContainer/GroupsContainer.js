@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { getGroups } from "../../store/groups";
 import styles from "./GroupsContainer.module.css";
+import GroupRow from "../GroupRow";
 // import other data here
 
 const GroupsContainer = () => {
@@ -18,16 +19,16 @@ const GroupsContainer = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <table>
-        <thead>
+    <div className={styles.tableContainer}>
+      <table className={styles.table}>
+        <thead className={styles.thead}>
           <tr>
             <th>id</th>
             <th>hostUserId</th>
             <th>playStyle</th>
             <th>description</th>
             <th>groupName</th>
-            <tbody>
+            <tbody className={styles.tbody}>
               {groups.map((group) => (
                 <GroupRow key={group.id} group={group} />
               ))}
