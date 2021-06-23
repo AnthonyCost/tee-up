@@ -2,6 +2,8 @@
 import { NavLink } from "react-router-dom";
 
 const GroupCard = ({ group }) => {
+  console.log(group);
+
   return (
     <div className="cardContainer">
       <div className="imageContainer">
@@ -17,7 +19,7 @@ const GroupCard = ({ group }) => {
         <h2>{group.groupName}</h2>
       </div>
       <div className="cardSubTitle">
-        <h3>Hosted by: {group.hostUserId}</h3>
+        <h3>Hosted by: {group.host.username}</h3>
       </div>
       <div className="cardDescription">
         <p>{group.description}</p>
