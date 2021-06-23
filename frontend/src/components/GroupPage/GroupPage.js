@@ -11,16 +11,16 @@ import styles from "./GroupPage.css";
 
 const GroupPage = () => {
   // Declare variables from hooks
-  const { groupId } = useParams();
+  const { id } = useParams();
   const dispatch = useDispatch();
   const group = useSelector((state) => {
-    return state.groups[groupId];
+    return state.groups[id];
   });
 
   console.log(group);
 
   useEffect(() => {
-    dispatch(grabGroup(groupId));
+    dispatch(grabGroup(id));
   }, [dispatch]);
 
   return (
