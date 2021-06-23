@@ -4,18 +4,23 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getGroups } from "../../store/groups";
+import { grabGroup } from "../../store/groups";
 import styles from "./GroupPage.css";
 
 // import other data here
 
 const GroupPage = () => {
   // Declare variables from hooks
+  const { groupId } = useParams();
   const dispatch = useDispatch();
-  const groups = useSelector((state) => Object.values(state.groups));
+  const group = useSelector((state) => {
+    return state.groups[groupId];
+  });
+
+  console.log(group);
 
   useEffect(() => {
-    dispatch(getGroups());
+    dispatch(grabGroup(groupId));
   }, [dispatch]);
 
   return (

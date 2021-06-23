@@ -2,8 +2,6 @@
 import { NavLink } from "react-router-dom";
 
 const GroupCard = ({ group }) => {
-  console.log(group);
-
   return (
     <div className="cardContainer">
       <div className="imageContainer">
