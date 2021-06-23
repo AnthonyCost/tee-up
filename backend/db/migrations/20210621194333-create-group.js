@@ -11,6 +11,7 @@ module.exports = {
       hostUserId: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        references: { model: "Users" },
       },
       playStyle: {
         allowNull: false,

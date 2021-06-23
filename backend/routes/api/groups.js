@@ -6,7 +6,7 @@ const router = express.Router();
 const asyncHandler = require("express-async-handler");
 // Take a second to import the database stuff you'll need
 
-const { Group } = require("../../db/models");
+const { Group, User } = require("../../db/models");
 
 // require authMiddleware here if needed, (not needed here for the all groups page but definitely needed for the individual group pages)
 
@@ -17,7 +17,12 @@ const { Group } = require("../../db/models");
 router.get(
   "/",
   asyncHandler(async (req, res) => {
-    const groups = await Group.findAll();
+    const groups = await Group.findAll({
+      where: {
+        model: User,
+        as: "host",
+      },
+    });
     res.json(groups);
   })
 );
