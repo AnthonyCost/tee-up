@@ -21,28 +21,9 @@ const GroupsContainer = () => {
 
   return (
     <div className={styles.tableContainer}>
-      <table className={styles.table}>
-        <thead className={styles.thead}>
-          <tr>
-            <th>id</th>
-            <th>hostUserId</th>
-            <th>playStyle</th>
-            <th>description</th>
-            <th>groupName</th>
-            <th>image</th>
-          </tr>
-        </thead>
-        {/* <tbody className={styles.tbody}>
-          {groups.map((group) => (
-            <GroupRow key={group.id} group={group} />
-          ))}
-        </tbody> */}
-        <tbody className={styles.tbody}>
-          {groups.map((group) => (
-            <GroupCard key={group.id} group={group} />
-          ))}
-        </tbody>
-      </table>
+      {groups.map((group) => (
+        <GroupCard key={group.id} group={group} />
+      ))}
     </div>
   );
 };
