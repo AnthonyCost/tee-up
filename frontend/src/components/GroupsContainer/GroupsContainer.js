@@ -27,6 +27,7 @@ const GroupsContainer = () => {
             <th>playStyle</th>
             <th>description</th>
             <th>groupName</th>
+            <th>image</th>
           </tr>
         </thead>
         <tbody className={styles.tbody}>

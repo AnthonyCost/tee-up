@@ -6,6 +6,9 @@ const GroupRow = ({ group }) => {
       <td>{group.playStyle}</td>
       <td>{group.description}</td>
       <td>{group.groupName}</td>
+      <td>
+        <img src={group.imageUrl} />
+      </td>
     </tr>
   );
 };
