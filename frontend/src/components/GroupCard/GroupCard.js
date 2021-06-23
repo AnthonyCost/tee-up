@@ -1,9 +1,9 @@
-import styles from "./GroupCard.css";
+// import styles from "./GroupCard.css";
 
 const GroupCard = ({ group }) => {
   return (
-    <div className={styles.cardContainer}>
-      <div className="image-container">
+    <div className="cardContainer">
+      <div className="imageContainer">
         <img
           src={
             group.imageUrl
@@ -12,16 +12,16 @@ const GroupCard = ({ group }) => {
           }
         />
       </div>
-      <div className={styles.cardTitle}>
+      <div className="cardTitle">
         <h2>{group.groupName}</h2>
       </div>
-      <div className={styles.cardSubTitle}>
+      <div className="cardSubTitle">
         <h3>Hosted by: {group.hostUserId}</h3>
       </div>
-      <div className={styles.cardDescription}>
+      <div className="cardDescription">
         <p>{group.description}</p>
       </div>
-      <div className={styles.cardBtn}>
+      <div className="cardBtn">
         <a>More Info</a>
       </div>
     </div>
