@@ -18,7 +18,7 @@ router.get(
   "/",
   asyncHandler(async (req, res) => {
     const groups = await Group.findAll({
-      where: {
+      include: {
         model: User,
         as: "host",
       },
