@@ -3,14 +3,19 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import { getGroups } from "../../store/groups";
 import styles from "./GroupsContainer.module.css";
 // import other data here
 
 const GroupsContainer = () => {
   // Declare variables from hooks
   const dispatch = useDispatch();
-  const 
+  const groups = useSelector((state) => Object.values(state.users));
   //
+
+  useEffect(() => {
+    dispatch(getGroups());
+  }, [dispatch]);
 
   return (
     <div>
