@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       playStyle: DataTypes.STRING,
       description: DataTypes.TEXT,
       groupName: DataTypes.STRING,
+      imageUrl: DataTypes.STRING,
     },
     {}
   );
