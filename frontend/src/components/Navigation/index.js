@@ -30,6 +30,9 @@ function Navigation({ isLoaded }) {
             id="homeLogo"
           />
         </NavLink>
+        <NavLink exact to="/groups">
+          <p>Groups</p>
+        </NavLink>
         {isLoaded && sessionLinks}
       </li>
     </ul>
