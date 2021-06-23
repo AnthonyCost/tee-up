@@ -6,6 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { getGroups } from "../../store/groups";
 import styles from "./GroupsContainer.module.css";
 import GroupRow from "../GroupRow";
+// import GroupCard from "../GroupCard";
+
+
 // import other data here
 
 const GroupsContainer = () => {
@@ -35,6 +38,11 @@ const GroupsContainer = () => {
             <GroupRow key={group.id} group={group} />
           ))}
         </tbody>
+        {/* <tbody className={styles.tbody}>
+          {groups.map((group) => (
+            <GroupCard key={group.id} group={group} />
+          ))}
+        </tbody> */}
       </table>
     </div>
   );

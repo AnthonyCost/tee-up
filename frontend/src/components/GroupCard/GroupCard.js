@@ -1,4 +1,4 @@
-const GroupRow = ({ group }) => {
+const GroupCard = ({ group }) => {
   return (
     <tr>
       <td>{group.id}</td>
@@ -19,4 +19,4 @@ const GroupRow = ({ group }) => {
   );
 };
 
-export default GroupRow;
+export default GroupCard;
