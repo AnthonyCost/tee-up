@@ -20,7 +20,7 @@ const GroupsContainer = () => {
   }, [dispatch]);
 
   return (
-    <div className={styles.tableContainer}>
+    <div className={styles.cardContainer}>
       {groups.map((group) => (
         <GroupCard key={group.id} group={group} />
       ))}
