@@ -1,4 +1,5 @@
 // import styles from "./GroupCard.css";
+import { NavLink } from "react-router-dom";
 
 const GroupCard = ({ group }) => {
   return (
@@ -22,7 +23,9 @@ const GroupCard = ({ group }) => {
         <p>{group.description}</p>
       </div>
       <div className="cardBtn">
-        <a>More Info</a>
+        <NavLink to={`/groups/${group.id}`}>
+          <p>More Info</p>
+        </NavLink>
       </div>
     </div>
   );

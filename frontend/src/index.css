@@ -58,7 +58,16 @@ body {
   justify-content: center;
 }
 
-.cardBtn a {
+.cardBtn p {
+  color: white;
+  margin-bottom: 0%;
+  text-decoration: none;
+  transition: 0.4s;
+  animation: ease-in-out;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+
+.cardBtn:hover p {
+  background-color: #4c956c;
 }
