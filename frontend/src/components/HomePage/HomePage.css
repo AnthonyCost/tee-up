@@ -20,7 +20,6 @@
 
 .textBlock {
   width: 600px;
-  overflow: hidden;
   background-color: #373f51;
 }
 
@@ -47,4 +46,8 @@ img {
 
 .lowerBlock {
   display: flex;
+}
+
+.lowerBlock img {
+  height: 50%;
 }
