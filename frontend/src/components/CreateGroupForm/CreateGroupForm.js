@@ -21,6 +21,9 @@ const CreateGroupForm = () => {
   const updateGroupName = (e) => setGroupName(e.target.value);
   const updateImageUrl = (e) => setImageUrl(e.target.value);
 
+  const currentUser = useSelector((state) => state.session.user);
+  const currentUserId = currentUser.id;
+
   useEffect(() => {
     dispatch(getGroups());
   }, [dispatch]);
@@ -29,7 +32,7 @@ const CreateGroupForm = () => {
     e.preventDefault();
 
     const payload = {
-      hostUserId: currentUser.id,
+      hostUserId: currentUserId,
       playStyle,
       description,
       groupName,
@@ -39,13 +42,14 @@ const CreateGroupForm = () => {
     let createdGroup = await dispatch(createGroup(payload));
     if (createdGroup) {
       history.push(`/groups/${createdGroup.id}`);
-      hideForm();
+      // hideForm();
     }
   };
 
   const handleCancelClick = (e) => {
     e.preventDefault();
-    hideForm();
+    history.push(`/groups`);
+    // hideForm();
   };
 
   return (

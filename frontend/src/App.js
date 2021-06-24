@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import GroupsContainer from "./components/GroupsContainer/GroupsContainer";
 import GroupPage from "./components/GroupPage/GroupPage";
 import HomePage from "./components/HomePage";
+import CreateGroupForm from "./components/CreateGroupForm/CreateGroupForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route exact path="/groups/:id">
             <GroupPage />
+          </Route>
+          <Route exact path="/createGroup">
+            <CreateGroupForm />
           </Route>
         </Switch>
       )}

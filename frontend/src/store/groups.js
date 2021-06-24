@@ -15,14 +15,14 @@ const setOneGroup = (group) => ({
   group,
 });
 
-const createGroup = (group) => ({
+const addGroup = (group) => ({
   type: CREATE_GROUP,
   group,
 });
 
 // Define Thunk creators
 export const createGroup = (payload) => async (dispatch) => {
-  const response = await fetch("/api/groups", {
+  const response = await csrfFetch("/api/groups", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
@@ -30,7 +30,7 @@ export const createGroup = (payload) => async (dispatch) => {
 
   if (response.ok) {
     const createdGroup = await response.json();
-    dispatch(createGroup(createdGroup));
+    dispatch(addGroup(createdGroup));
     return createdGroup;
   }
 };
@@ -49,7 +49,6 @@ export const grabGroup = (groupId) => async (dispatch) => {
 
 // Define an initial state
 const initialState = {};
-
 
 // Define a reducer
 const groupsReducer = (state = initialState, action) => {
