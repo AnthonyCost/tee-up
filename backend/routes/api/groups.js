@@ -45,16 +45,17 @@ router.get(
 router.post(
   "/",
   asyncHandler(async (req, res) => {
-    const { hostUserId, playStyle, description, groupName, imageUrl } =
-      req.body;
+    let { hostUserId, playStyle, description, groupName, imageUrl } = req.body;
     hostUserId = Number(hostUserId);
-    const newGroup = group.create({
+    console.log(hostUserId);
+    const newGroup = await Group.create({
       hostUserId,
       playStyle,
       description,
       groupName,
       imageUrl,
     });
+    res.json(newGroup);
   })
 );
 
