@@ -21,23 +21,21 @@ const GroupPage = () => {
     dispatch(grabGroup(id));
   }, [dispatch]);
 
-  console.log(group);
-
   return (
-    <div className="groupPageContainer">
-      <div className="groupPageTitle">
-        <h1>Group Name here</h1>
+    <div className={styles.groupPageContainer}>
+      <div className={styles.groupPageTitle}>
+        <h1>{group?.groupName}</h1>
       </div>
-      <div className="groupPageHost">
-        <h3>hosted by here</h3>
+      <div className={styles.groupPageHost}>
+        <h3>Host: {group?.host.username}</h3>
       </div>
-      <div className="groupPagePlaystyle">
-        <h5>playstyle here</h5>
+      <div className={styles.groupPagePlaystyle}>
+        <h5>{group?.playStyle}</h5>
       </div>
-      <div className="groupPageDescription">
-        <p>Description here</p>
+      <div className={styles.groupPageDescription}>
+        <p>{group?.description}</p>
       </div>
-      <div className="groupPageCalendar">
+      <div className={styles.groupPageCalendar}>
         <p>calendar here</p>
       </div>
     </div>
