@@ -22,21 +22,28 @@ const GroupPage = () => {
   }, [dispatch]);
 
   return (
-    <div className="groupPageContainer">
-      <div className="groupPageTitle">
-        <h1>{group?.groupName}</h1>
-      </div>
-      <div className="groupPageHost">
-        <h3>Host: {group?.host.username}</h3>
-      </div>
-      <div className="groupPagePlaystyle">
-        <h5>{group?.playStyle}</h5>
-      </div>
-      <div className="groupPageDescription">
-        <p>{group?.description}</p>
-      </div>
-      <div className="groupPageCalendar">
-        <p>calendar here</p>
+    <div
+      className="groupPageBackground"
+      style={{
+        backgroundImage: `url(${group?.imageUrl})`,
+      }}
+    >
+      <div className="groupPageContainer">
+        <div className="groupPageTitle">
+          <h1>{group?.groupName}</h1>
+        </div>
+        <div className="groupPageHost">
+          <h3>Host: {group?.host.username}</h3>
+        </div>
+        <div className="groupPagePlaystyle">
+          <h5>{group?.playStyle}</h5>
+        </div>
+        <div className="groupPageDescription">
+          <p>{group?.description}</p>
+        </div>
+        <div className="groupPageCalendar">
+          <p>calendar here</p>
+        </div>
       </div>
     </div>
   );
