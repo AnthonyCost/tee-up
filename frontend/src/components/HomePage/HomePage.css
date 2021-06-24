@@ -19,6 +19,8 @@
 }
 
 .textBlock {
+  width: 600px;
+  overflow: hidden;
   background-color: #373f51;
 }
 
@@ -26,13 +28,12 @@
   text-decoration: underline;
   display: flex;
   justify-content: center;
-  align-content: space-around;
+  align-content: space-between;
 }
 
 .textBlock-description {
   display: flex;
   justify-content: center;
-  align-content: space-between;
 }
 
 .upperBlock {
@@ -40,13 +41,10 @@
   justify-content: center;
 }
 
-.upperBlock-image img {
+img {
   height: 80%;
 }
 
-.lowerBlock-image img {
-  height: 80%;
-}
 .lowerBlock {
   display: flex;
 }
