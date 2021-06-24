@@ -31,7 +31,7 @@ function Navigation({ isLoaded }) {
       </NavLink>
       {isLoaded && sessionLinks}
       <NavLink className="navBarLink" exact to="/groups">
-        <a>Groups</a>
+        <p>Groups</p>
       </NavLink>
     </div>
   );

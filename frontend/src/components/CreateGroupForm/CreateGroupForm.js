@@ -25,10 +25,12 @@ const CreateGroupForm = () => {
   const currentUserId = currentUser.id;
 
   useEffect(() => {
+    console.log("is this running?");
     dispatch(getGroups());
   }, [dispatch]);
 
   const handleSubmit = async (e) => {
+    console.log("Hi!");
     e.preventDefault();
 
     const payload = {

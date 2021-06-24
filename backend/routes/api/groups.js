@@ -48,6 +48,14 @@ router.post(
   asyncHandler(async (req, res) => {
     const { hostUserId, playStyle, description, groupName, imageUrl } =
       req.body;
+    console.log(
+      "===============",
+      hostUserId,
+      playStyle,
+      description,
+      groupName,
+      imageUrl
+    );
     const group = await Group.create({
       hostUserId,
       playStyle,
