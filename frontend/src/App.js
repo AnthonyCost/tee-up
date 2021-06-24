@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import GroupsContainer from "./components/GroupsContainer/GroupsContainer";
+import GroupPage from "./components/GroupPage/GroupPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ function App() {
             <GroupsContainer />
           </Route>
           <Route exact path="/groups/:id">
-            <h1>Path Hit!</h1>
+            <GroupPage />
           </Route>
         </Switch>
       )}

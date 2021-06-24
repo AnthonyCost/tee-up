@@ -1,0 +1,39 @@
+.groupPageContainer {
+  background-color: #373f51;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.groupPageBackground:before {
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  height: 750px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(4px);
+}
+.groupPageBackground {
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  height: 750px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* filter: blur(4px); */
+}
+
+.groupPageTitle {
+  text-decoration: underline;
+}
+.groupPageHost {
+}
+.groupPagePlaystyle {
+}
+.groupPageDescription {
+}
+.groupPageCalendar {
+}
