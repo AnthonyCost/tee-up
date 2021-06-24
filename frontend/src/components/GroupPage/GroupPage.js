@@ -18,7 +18,9 @@ const GroupPage = () => {
   });
 
   useEffect(() => {
-    dispatch(grabGroup(id));
+    if (id) {
+      dispatch(grabGroup(id));
+    }
   }, [dispatch, id]);
 
   return (
@@ -33,8 +35,6 @@ const GroupPage = () => {
           <h1>{group?.groupName}</h1>
         </div>
         <div className="groupPageHost">
-          {console.log(group.host)}
-          {console.log(group.host.username)}
           <h3>Host: {group?.host?.username}</h3>
         </div>
         <div className="groupEditInfoButton">
