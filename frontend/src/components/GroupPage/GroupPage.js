@@ -25,7 +25,7 @@ const GroupPage = () => {
     <div
       className="groupPageBackground"
       style={{
-        backgroundImage: `url(${group?.imageUrl})`
+        backgroundImage: `url(${group?.imageUrl})`,
       }}
     >
       <div className="groupPageContainer">
@@ -41,8 +41,16 @@ const GroupPage = () => {
         <div className="groupPageDescription">
           <p>{group?.description}</p>
         </div>
-        <div className="groupPageCalendar">
-          <p>calendar here</p>
+        <div className="upcomingRoundDiv">
+          <div className="upcomingRound-Title">
+            <h2>Upcoming Rounds for {group?.groupName}</h2>
+          </div>
+          <div className="upcomingRound-addRoundButton">
+            <a>Add Round here if you are host</a>
+          </div>
+          <div className="upcomingRounds">
+            <p>Map all upcoming round components</p>
+          </div>
         </div>
       </div>
     </div>
