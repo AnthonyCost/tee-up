@@ -1,5 +1,14 @@
 /* Cards */
 
+.groupContainer {
+  width: 75%;
+  margin: auto;
+  display: flex;
+  column-gap: 10px;
+  row-gap: 15px;
+  justify-items: center;
+}
+
 .cardContainer {
   width: 600px;
   overflow: hidden;

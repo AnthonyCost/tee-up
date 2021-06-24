@@ -1,9 +1,8 @@
-.cardContainer {
+.groupContainer {
   width: 75%;
   margin: auto;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
+  display: flex;
+  align-items: center;
   column-gap: 10px;
   row-gap: 15px;
   justify-items: center;
