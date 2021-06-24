@@ -4,12 +4,13 @@ const HomePage = () => {
   return (
     <div>
       <div className="welcomeSplashImage">
-        <div className="welcomeBanner">
-          <h1>Welcome to Tee Up!</h1>
-        </div>
+        <span>L</span>
+      </div>
+      <div className="welcomeBanner">
+        <h1>Welcome to Tee Up</h1>
       </div>
       <div className="upperBlock">
-        <div>
+        <div className="upperBlock-image">
           <img src="https://images.unsplash.com/photo-1600185816226-0084d7bb9882?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1488&q=80" />
         </div>
         <div className="textBlock">
@@ -30,9 +31,6 @@ const HomePage = () => {
         </div>
       </div>
       <div className="lowerBlock">
-        <div className="lowerBlock-image">
-          <img src="https://images.unsplash.com/photo-1604702686571-f03d002a7c53?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1164&q=80" />
-        </div>
         <div className="textBlock">
           <div className="textBlock-title">
             <h2>What we offer</h2>
@@ -48,6 +46,9 @@ const HomePage = () => {
               to sign up and create a group of your own!
             </p>
           </div>
+        </div>
+        <div className="lowerBlock-image">
+          <img src="https://images.unsplash.com/photo-1595789927828-b56b8a608bc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2090&q=80" />
         </div>
       </div>
     </div>
