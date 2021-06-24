@@ -24,8 +24,22 @@ const GroupPage = () => {
   console.log(group);
 
   return (
-    <div>
-      <h1>Hi</h1>
+    <div className="groupPageContainer">
+      <div className="groupPageTitle">
+        <h1>Group Name here</h1>
+      </div>
+      <div className="groupPageHost">
+        <h3>hosted by here</h3>
+      </div>
+      <div className="groupPagePlaystyle">
+        <h5>playstyle here</h5>
+      </div>
+      <div className="groupPageDescription">
+        <p>Description here</p>
+      </div>
+      <div className="groupPageCalendar">
+        <p>calendar here</p>
+      </div>
     </div>
   );
 };
