@@ -25,12 +25,6 @@ const CreateGroupForm = () => {
     dispatch(getGroups());
   }, [dispatch]);
 
-  useEffect(() => {
-    if (pokeTypes.length && !type) {
-      setType(pokeTypes[0]);
-    }
-  }, [pokeTypes, type]);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
