@@ -25,7 +25,7 @@ const GroupPage = () => {
     <div
       className="groupPageBackground"
       style={{
-        backgroundImage: `url(${group?.imageUrl})`,
+        backgroundImage: `url(${group?.imageUrl})`
       }}
     >
       <div className="groupPageContainer">
