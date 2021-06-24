@@ -36,7 +36,7 @@ const GroupPage = () => {
           <h3>Host: {group?.host.username}</h3>
         </div>
         <div className="groupEditInfoButton">
-          <NavLink to={`/groups/edit${group?.id}`}>
+          <NavLink to={`/edit${group?.id}`}>
             <p>Edit Group Info</p>
           </NavLink>
         </div>
@@ -51,7 +51,7 @@ const GroupPage = () => {
             <h2>Upcoming Rounds for {group?.groupName}</h2>
           </div>
           <div className="upcomingRound-addRoundButton">
-            <NavLink to={`/groups/addRound${group?.id}`}>
+            <NavLink to={`/addRound${group?.id}`}>
               <p>Add Rounds</p>
             </NavLink>
           </div>
