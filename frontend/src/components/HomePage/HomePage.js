@@ -4,7 +4,7 @@ const HomePage = () => {
   return (
     <div>
       <div className="welcomeSplashImage">
-        <span> </span>
+        <span></span>
       </div>
       <div className="welcomeBanner">
         <h1>Welcome to Tee Up</h1>
