@@ -29,6 +29,7 @@ const CreateGroupForm = () => {
   }, [dispatch]);
 
   const handleSubmit = async (e) => {
+    // hello!
     e.preventDefault();
 
     const payload = {
