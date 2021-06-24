@@ -22,7 +22,7 @@ const createGroup = (group) => ({
 
 // Define Thunk creators
 export const createGroup = (payload) => async (dispatch) => {
-  const response = await fetch("/api/pokemon", {
+  const response = await fetch("/api/groups", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
@@ -48,17 +48,8 @@ export const grabGroup = (groupId) => async (dispatch) => {
 };
 
 // Define an initial state
-const initialState = {
-  groupsList: [],
-};
+const initialState = {};
 
-const sortGroups = (groups) => {
-  return groups
-    .sort((groupA, groupB) => {
-      return groupA.id - groupB.id;
-    })
-    .map((group) => group.id);
-};
 
 // Define a reducer
 const groupsReducer = (state = initialState, action) => {
@@ -84,9 +75,6 @@ const groupsReducer = (state = initialState, action) => {
           ...state,
           [action.group.id]: action.group,
         };
-        const groupsList = newState.groups.map((id) => newState[id]);
-        groupsList.push(action.group);
-        newState.groups = sortGroups(groupsList);
         return newState;
       }
     }
