@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { grabGroup } from "../../store/groups";
-import styles from "./GroupPage.css";
+import "./GroupPage.css";
 
 // import other data here
 
@@ -22,20 +22,20 @@ const GroupPage = () => {
   }, [dispatch]);
 
   return (
-    <div className={styles.groupPageContainer}>
-      <div className={styles.groupPageTitle}>
+    <div className="groupPageContainer">
+      <div className="groupPageTitle">
         <h1>{group?.groupName}</h1>
       </div>
-      <div className={styles.groupPageHost}>
+      <div className="groupPageHost">
         <h3>Host: {group?.host.username}</h3>
       </div>
-      <div className={styles.groupPagePlaystyle}>
+      <div className="groupPagePlaystyle">
         <h5>{group?.playStyle}</h5>
       </div>
-      <div className={styles.groupPageDescription}>
+      <div className="groupPageDescription">
         <p>{group?.description}</p>
       </div>
-      <div className={styles.groupPageCalendar}>
+      <div className="groupPageCalendar">
         <p>calendar here</p>
       </div>
     </div>

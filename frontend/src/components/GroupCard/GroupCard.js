@@ -1,6 +1,8 @@
 // import styles from "./GroupCard.css";
 import { NavLink } from "react-router-dom";
 
+import "./GroupCard.css";
+
 const GroupCard = ({ group }) => {
   return (
     <div className="cardContainer">

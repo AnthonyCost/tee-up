@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { getGroups } from "../../store/groups";
-import styles from "./GroupsContainer.module.css";
+import "./GroupsContainer.module.css";
 // import GroupRow from "../GroupRow";
 import GroupCard from "../GroupCard";
 
@@ -20,7 +20,7 @@ const GroupsContainer = () => {
   }, [dispatch]);
 
   return (
-    <div className={styles.cardContainer}>
+    <div className="groupContainer">
       {groups.map((group) => (
         <GroupCard key={group.id} group={group} />
       ))}
