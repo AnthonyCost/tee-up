@@ -1,7 +1,7 @@
 // Import hooks from 'react'. Which hook is meant for causing effects?
 // Import hooks from 'react-redux'
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { grabGroup } from "../../store/groups";
@@ -18,14 +18,16 @@ const GroupPage = () => {
   });
 
   useEffect(() => {
-    dispatch(grabGroup(id));
-  }, [dispatch]);
+    if (id) {
+      dispatch(grabGroup(id));
+    }
+  }, [dispatch, id]);
 
   return (
     <div
       className="groupPageBackground"
       style={{
-        backgroundImage: `url(${group?.imageUrl})`
+        backgroundImage: `url(${group?.imageUrl})`,
       }}
     >
       <div className="groupPageContainer">
@@ -33,7 +35,12 @@ const GroupPage = () => {
           <h1>{group?.groupName}</h1>
         </div>
         <div className="groupPageHost">
-          <h3>Host: {group?.host.username}</h3>
+          <h3>Host: {group?.host?.username}</h3>
+        </div>
+        <div className="groupEditInfoButton">
+          <NavLink to={`/edit${group?.id}`}>
+            <p>Edit Group Info</p>
+          </NavLink>
         </div>
         <div className="groupPagePlaystyle">
           <h5>{group?.playStyle}</h5>
@@ -41,8 +48,18 @@ const GroupPage = () => {
         <div className="groupPageDescription">
           <p>{group?.description}</p>
         </div>
-        <div className="groupPageCalendar">
-          <p>calendar here</p>
+        <div className="upcomingRoundDiv">
+          <div className="upcomingRound-Title">
+            <h2>Upcoming Rounds for {group?.groupName}</h2>
+          </div>
+          <div className="upcomingRound-addRoundButton">
+            <NavLink to={`/addRound${group?.id}`}>
+              <p>Add Rounds</p>
+            </NavLink>
+          </div>
+          <div className="upcomingRounds">
+            <p>Map all upcoming round components</p>
+          </div>
         </div>
       </div>
     </div>

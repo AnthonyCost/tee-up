@@ -2,6 +2,7 @@ import { csrfFetch } from "./csrf";
 // Define Action Types as Constants
 const SET_GROUPS = "groups/SET_GROUPS";
 const GRAB_GROUP = "groups/GRAB_GROUP";
+const CREATE_GROUP = "groups/CREATE_GROUP";
 
 // Define Action Creators
 const setGroups = (groups) => ({
@@ -14,7 +15,33 @@ const setOneGroup = (group) => ({
   group,
 });
 
+const addGroup = (group) => ({
+  type: CREATE_GROUP,
+  group,
+});
+
 // Define Thunk creators
+export const createGroup = (payload) => async (dispatch) => {
+  const { hostUserId, playStyle, description, groupName, imageUrl } = payload;
+  const response = await csrfFetch("/api/groups", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      hostUserId,
+      playStyle,
+      description,
+      groupName,
+      imageUrl,
+    }),
+  });
+
+  if (response.ok) {
+    const createdGroup = await response.json();
+    dispatch(addGroup(createdGroup));
+    return createdGroup;
+  }
+};
+
 export const getGroups = () => async (dispatch) => {
   const res = await csrfFetch("/api/groups");
   const groups = await res.json();
@@ -48,6 +75,15 @@ const groupsReducer = (state = initialState, action) => {
         ...state,
         [action.group.id]: action.group,
       };
+    case CREATE_GROUP:
+      if (!state[action.group.id]) {
+        const newState = {
+          ...state,
+          [action.group.id]: action.group,
+        };
+        return newState;
+      }
+      break;
     default:
       return state;
   }

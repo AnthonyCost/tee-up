@@ -1,6 +1,7 @@
 // Import hooks from 'react'. Which hook is meant for causing effects?
 // Import hooks from 'react-redux'
 import { useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { getGroups } from "../../store/groups";
@@ -20,10 +21,17 @@ const GroupsContainer = () => {
   }, [dispatch]);
 
   return (
-    <div className="groupContainer">
-      {groups.map((group) => (
-        <GroupCard key={group.id} group={group} />
-      ))}
+    <div>
+      <div className="addGroupBtn">
+        <NavLink to={`/createGroup`}>
+          <p>Create Group</p>
+        </NavLink>
+      </div>
+      <div className="groupContainer">
+        {groups.map((group) => (
+          <GroupCard key={group.id} group={group} />
+        ))}
+      </div>
     </div>
   );
 };

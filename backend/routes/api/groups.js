@@ -42,5 +42,22 @@ router.get(
   })
 );
 
+router.post(
+  "/",
+  asyncHandler(async (req, res) => {
+    let { hostUserId, playStyle, description, groupName, imageUrl } = req.body;
+    hostUserId = Number(hostUserId);
+    console.log(hostUserId);
+    const newGroup = await Group.create({
+      hostUserId,
+      playStyle,
+      description,
+      groupName,
+      imageUrl,
+    });
+    res.json(newGroup);
+  })
+);
+
 // remember to export the router too
 module.exports = router;
