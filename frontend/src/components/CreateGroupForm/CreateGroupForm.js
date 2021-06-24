@@ -50,6 +50,9 @@ const CreateGroupForm = () => {
 
   return (
     <div className="newGroup-container">
+      <div className="newGroup-banner">
+        <h1>Create a Group</h1>
+      </div>
       <form onSubmit={handleSubmit}>
         <input
           type="string"
