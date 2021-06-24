@@ -23,7 +23,7 @@ const GroupsContainer = () => {
   return (
     <div>
       <div className="addGroupBtn">
-        <NavLink to={`/createGroup`}>
+        <NavLink to={`/groups/create`}>
           <p>Create Group</p>
         </NavLink>
       </div>
