@@ -30,6 +30,7 @@ const CreateGroupForm = () => {
 
   const handleSubmit = async (e) => {
     // hello!
+    console.log("we got here");
     e.preventDefault();
 
     const payload = {
@@ -39,8 +40,10 @@ const CreateGroupForm = () => {
       groupName,
       imageUrl,
     };
+    console.log(payload);
 
     let createdGroup = await dispatch(createGroup(payload));
+    console.log(createdGroup);
     if (createdGroup) {
       history.push(`/groups/${createdGroup.id}`);
       // hideForm();
@@ -86,9 +89,9 @@ const CreateGroupForm = () => {
           onChange={updateImageUrl}
         />
         <button type="submit">Create new Group</button>
-        <button type="button" onClick={handleCancelClick}>
+        {/* <button type="button" onClick={handleCancelClick}>
           Cancel
-        </button>
+        </button> */}
       </form>
     </div>
   );
