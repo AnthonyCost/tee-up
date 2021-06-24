@@ -19,7 +19,7 @@ const GroupPage = () => {
 
   useEffect(() => {
     dispatch(grabGroup(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   return (
     <div
