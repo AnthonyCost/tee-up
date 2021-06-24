@@ -1,7 +1,7 @@
 // Import hooks from 'react'. Which hook is meant for causing effects?
 // Import hooks from 'react-redux'
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { grabGroup } from "../../store/groups";
@@ -36,7 +36,9 @@ const GroupPage = () => {
           <h3>Host: {group?.host.username}</h3>
         </div>
         <div className="groupEditInfoButton">
-          <a>Edit Group Info here</a>
+          <NavLink to={`/groups/edit${group?.id}`}>
+            <p>Edit Group Info</p>
+          </NavLink>
         </div>
         <div className="groupPagePlaystyle">
           <h5>{group?.playStyle}</h5>
@@ -49,7 +51,9 @@ const GroupPage = () => {
             <h2>Upcoming Rounds for {group?.groupName}</h2>
           </div>
           <div className="upcomingRound-addRoundButton">
-            <a>Add Round here if you are host</a>
+            <NavLink to={`/groups/addRound${group?.id}`}>
+              <p>Add Rounds</p>
+            </NavLink>
           </div>
           <div className="upcomingRounds">
             <p>Map all upcoming round components</p>
