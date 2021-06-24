@@ -35,6 +35,9 @@ const GroupPage = () => {
         <div className="groupPageHost">
           <h3>Host: {group?.host.username}</h3>
         </div>
+        <div className="groupEditInfoButton">
+          <a>Edit Group Info here</a>
+        </div>
         <div className="groupPagePlaystyle">
           <h5>{group?.playStyle}</h5>
         </div>
