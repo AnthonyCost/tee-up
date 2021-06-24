@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getGroups, createGroup } from "../../store/groups";
+import { createGroup } from "../../store/groups";
 import { useHistory } from "react-router-dom";
 
 // styles here
 import "./CreateGroupForm.css";
 
 const CreateGroupForm = () => {
-  const groups = useSelector((state) => state.groups);
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -23,10 +22,6 @@ const CreateGroupForm = () => {
 
   const currentUser = useSelector((state) => state.session.user);
   const currentUserId = currentUser.id;
-
-  useEffect(() => {
-    dispatch(getGroups());
-  }, [dispatch]);
 
   const handleSubmit = async (e) => {
     // hello!
@@ -89,9 +84,9 @@ const CreateGroupForm = () => {
           onChange={updateImageUrl}
         />
         <button type="submit">Create new Group</button>
-        {/* <button type="button" onClick={handleCancelClick}>
+        <button type="button" onClick={handleCancelClick}>
           Cancel
-        </button> */}
+        </button>
       </form>
     </div>
   );
