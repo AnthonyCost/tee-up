@@ -17,15 +17,15 @@ const GroupPage = () => {
     return state.groups[id];
   });
 
-  console.log(group);
-
   useEffect(() => {
     dispatch(grabGroup(id));
   }, [dispatch]);
 
+  console.log(group);
+
   return (
     <div>
-      <h1>Here I am!</h1>
+      <h1>Hi</h1>
     </div>
   );
 };
