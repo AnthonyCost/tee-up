@@ -3,11 +3,14 @@ import "./HomePage.css";
 const HomePage = () => {
   return (
     <div>
-      <div className="welcomeSplashImage">
-        <span>*</span>
-      </div>
-      <div className="welcomeBanner">
-        <h1>Welcome to Tee Up</h1>
+      <div className="welcomeSplashContainer">
+        <div className="welcomeSplashBackground">
+          <span>
+            <div className="welcomeBanner">
+              <h1>Welcome to Tee Up</h1>
+            </div>
+          </span>
+        </div>
       </div>
       <div className="upperBlock">
         <div className="upperBlock-image">

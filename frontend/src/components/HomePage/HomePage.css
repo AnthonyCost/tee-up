@@ -1,21 +1,26 @@
-.welcomeSplashImage {
+.welcomeSplashContainer {
+}
+
+.welcomeSplashBackground {
+  /* position: fixed; */
+  /* filter: blur(7px); */
+  /* z-index: -1; */
   background-image: url("https://images.unsplash.com/photo-1604702686571-f03d002a7c53?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1976&q=80");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: blur(7px);
-  opacity: 90%;
 }
-.welcomeSplashImage span {
+.welcomeSplashBackground span {
   display: flex;
   justify-content: center;
   padding-top: 50%;
-  opacity: 0%;
 }
 .welcomeBanner {
   margin: 20px;
   display: flex;
   justify-content: center;
+  filter: blur(0);
+  z-index: 1;
 }
 
 .textBlock {
