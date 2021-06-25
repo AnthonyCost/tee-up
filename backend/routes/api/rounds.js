@@ -28,6 +28,25 @@ router.get(
 );
 
 router.get(
+  "/all/:groupId",
+  asyncHandler(async (req, res) => {
+    const { groupId } = parseInt(req.params.groupId, 10);
+    let test = await Group.findByPk(
+      { groupId },
+      {
+        include: [
+          {
+            model: Round,
+            include: [{ model: GolfCourse }],
+          },
+        ],
+      }
+    );
+    res.json(test);
+  })
+);
+
+router.get(
   "/:id",
   asyncHandler(async (req, res) => {
     const { id } = req.params;
