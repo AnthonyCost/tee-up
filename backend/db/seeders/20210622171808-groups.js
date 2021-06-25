@@ -27,8 +27,7 @@ module.exports = {
           playStyle: "Professional",
           description: "We are a group of PGA level players",
           groupName: "The Pros",
-          imageUrl:
-            "https://images.unsplash.com/photo-1621005570352-6418df03796b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=967&q=80",
+          imageUrl: null,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -37,7 +36,8 @@ module.exports = {
           playStyle: "Competitive",
           description: "Playing for money!",
           groupName: "Gamblers",
-          imageUrl: null,
+          imageUrl:
+            "https://images.unsplash.com/photo-1501003878151-d3cb87799705?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
