@@ -37,9 +37,6 @@ function App() {
           <Route exact path="/createGroup">
             <CreateGroupForm />
           </Route>
-          <Route exact path="/editGroup/:id">
-            <EditGroupForm />
-          </Route>
         </Switch>
       )}
     </>

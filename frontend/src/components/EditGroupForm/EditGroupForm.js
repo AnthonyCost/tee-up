@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateGroup } from "../../store/groups";
+import { updateGroup, grabGroup } from "../../store/groups";
 import { useParams } from "react-router";
 import { useHistory } from "react-router-dom";
 
@@ -25,11 +25,12 @@ const EditGroupForm = () => {
   const updateImageUrl = (e) => setImageUrl(e.target.value);
 
   const currentUser = useSelector((state) => state.session.user);
-  const currentUserId = currentUser.id;
+  const currentUserId = Number(currentUser.id);
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const payload = {
+      id,
       hostUserId: currentUserId,
       playStyle,
       description,
@@ -39,13 +40,14 @@ const EditGroupForm = () => {
 
     let updatedGroup = await dispatch(updateGroup(payload));
     if (updatedGroup) {
-      history.push(`/groups/${updatedGroup.id}`);
+      dispatch(grabGroup(id));
+      history.push(`/groups/${id}`);
     }
   };
 
   const handleCancelClick = (e) => {
     e.preventDefault();
-    history.push(`/groups/${group.id}`);
+    history.push(`/groups`);
   };
 
   return (

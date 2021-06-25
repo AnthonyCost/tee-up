@@ -30,7 +30,7 @@ router.get(
 router.get(
   "/:id",
   asyncHandler(async (req, res) => {
-    const id = req.params.id;
+    const { id } = req.params;
     const groupId = parseInt(id);
     const group = await Group.findByPk(groupId, {
       include: {
@@ -45,7 +45,7 @@ router.get(
 router.put(
   "/:id",
   asyncHandler(async (req, res) => {
-    const id = req.params.id;
+    const { id } = req.params;
     const groupId = parseInt(id);
     const updatedGroup = await Group.update(req.body, {
       where: {
