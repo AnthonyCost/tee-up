@@ -64,8 +64,17 @@
 }
 
 .cardBtn p {
+  outline: none;
+  border: solid 1px green;
   color: white;
-  margin-bottom: 0%;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 30px;
+  background: green;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  margin: 5px;
   text-decoration: none;
   transition: 0.4s;
   animation: ease-in-out;
@@ -74,5 +83,6 @@
 }
 
 .cardBtn:hover p {
-  background-color: #4c956c;
+  background-color: #373f51;
+  color: green;
 }
