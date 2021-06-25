@@ -56,6 +56,20 @@ router.put(
   })
 );
 
+router.delete(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const { id } = req.params;
+    const groupId = parseInt(id);
+    const deleteSelectedGroup = await Group.destroy(req.body, {
+      where: {
+        id: groupId,
+      },
+    });
+    res.json(deleteSelectedGroup);
+  })
+);
+
 router.post(
   "/",
   asyncHandler(async (req, res) => {
