@@ -71,8 +71,6 @@ router.post(
   "/",
   asyncHandler(async (req, res) => {
     let { courseId, groupId, ruleset, startTime, holes } = req.body;
-    hostUserId = Number(hostUserId);
-    console.log(hostUserId);
     const newRound = await Round.create({
       courseId,
       groupId,
