@@ -69,7 +69,7 @@ const GroupPage = () => {
           </div>
           <div className="upcomingRound-addRoundButton">
             <NavLink to={`/addRound${group?.id}`}>
-              <p>Add Rounds</p>
+              <p>Add Round</p>
             </NavLink>
           </div>
           <div className="upcomingRounds">
