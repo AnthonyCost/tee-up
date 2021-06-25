@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateGroup } from "../../store/groups";
+import { useParams } from "react-router";
 import { useHistory } from "react-router-dom";
 
 import "./EditGroupForm.css";
 
-const EditGroupForm = ({ group }) => {
+const EditGroupForm = () => {
+  const { id } = useParams();
+
+  const group = useSelector((state) => state.groups[id]);
+
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -75,7 +80,7 @@ const EditGroupForm = ({ group }) => {
           value={imageUrl}
           onChange={updateImageUrl}
         />
-        <button type="submit">Create new Group</button>
+        <button type="submit">Update Group</button>
         <button type="button" onClick={handleCancelClick}>
           Cancel
         </button>

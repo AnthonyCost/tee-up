@@ -42,6 +42,20 @@ router.get(
   })
 );
 
+router.put(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const groupId = parseInt(id);
+    const updatedGroup = await Group.update(req.body, {
+      where: {
+        id: groupId,
+      },
+    });
+    res.json(updatedGroup);
+  })
+);
+
 router.post(
   "/",
   asyncHandler(async (req, res) => {
