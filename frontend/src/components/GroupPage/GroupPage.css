@@ -114,20 +114,21 @@
   border-radius: 30px;
   border: solid 1px blue;
   display: flex;
+  animation: ease-in-out;
   justify-content: space-around;
-  color: blue;
-  background: #373f51;
+  color: white;
+  background: blue;
   transition: all 0.3s linear;
 }
 
 .upcomingRound-addRoundButton p:hover {
-  background-color: blue;
-  color: white;
+  background: none;
+  color: blue;
 }
 
 .upcomingRound-addRoundButton p:focus {
-  background-color: blue;
-  color: #373f51;
+  background: none;
+  color: blue;
 }
 
 .upcomingRound-addRoundButton p:active {
