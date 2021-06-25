@@ -56,7 +56,7 @@ export const grabGroup = (groupId) => async (dispatch) => {
 
 export const updateGroup = (payload) => async (dispatch) => {
   const id = payload.id;
-  const response = await fetch(`/api/groups/${id}`, {
+  const response = await csrfFetch(`/api/groups/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
