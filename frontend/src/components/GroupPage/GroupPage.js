@@ -3,8 +3,8 @@
 import { useEffect } from "react";
 import { useParams, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import DeleteGroupModal from "../DeleteGroupModal";
 import EditFormModal from "../EditGroupModal";
-// import DeleteGroupModal from "../DeleteGroupModal";
 
 import { grabGroup } from "../../store/groups";
 import "./GroupPage.css";
@@ -39,10 +39,14 @@ const GroupPage = () => {
         <div className="groupPageHost">
           <h3>Host: {group?.host?.username}</h3>
         </div>
-        <div>
-          <EditFormModal />
+        <div className="groupPage-modals">
+          <div className="editModal">
+            <EditFormModal />
+          </div>
+          <div className="deleteModal">
+            <DeleteGroupModal />
+          </div>
         </div>
-        <div>{/* <DeleteGroupModal /> */}</div>
         <div className="groupPagePlaystyle">
           <h5>{group?.playStyle}</h5>
         </div>
