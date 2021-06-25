@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { editGroup } from "../../store/groups";
+import { updateGroup } from "../../store/groups";
 import { useHistory } from "react-router-dom";
 
 import "./EditGroupForm.css";
@@ -35,13 +35,10 @@ const EditGroupForm = ({ group }) => {
       groupName,
       imageUrl,
     };
-    console.log(payload);
 
-    let createdGroup = await dispatch(createGroup(payload));
-    console.log(createdGroup);
-    if (createdGroup) {
-      history.push(`/groups/${createdGroup.id}`);
-      // hideForm();
+    let updatedGroup = await dispatch(updateGroup(payload));
+    if (updatedGroup) {
+      history.push(`/groups/${updatedGroup.id}`);
     }
   };
 
@@ -51,8 +48,8 @@ const EditGroupForm = ({ group }) => {
   };
 
   return (
-    <div className="EditGroup-container">
-      <div className="EditGroup-banner">
+    <div className="updateGroup-container">
+      <div className="updateGroup-banner">
         <h1>Edit Group</h1>
       </div>
       <form onSubmit={handleSubmit}>
