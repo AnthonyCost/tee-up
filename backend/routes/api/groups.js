@@ -30,7 +30,7 @@ router.get(
 router.get(
   "/:id",
   asyncHandler(async (req, res) => {
-    const id = req.params.id;
+    const { id } = req.params;
     const groupId = parseInt(id);
     const group = await Group.findByPk(groupId, {
       include: {
@@ -39,6 +39,31 @@ router.get(
       },
     });
     res.json(group);
+  })
+);
+
+router.put(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const { id } = req.params;
+    const groupId = parseInt(id);
+    const updatedGroup = await Group.update(req.body, {
+      where: {
+        id: groupId,
+      },
+    });
+    res.json(updatedGroup);
+  })
+);
+
+router.delete(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const { id } = req.params;
+    const groupId = parseInt(id);
+    const group = await Group.findByPk(groupId);
+    await group.destroy();
+    res.send(200);
   })
 );
 

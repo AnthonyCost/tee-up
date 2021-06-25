@@ -37,3 +37,77 @@
 }
 .groupPageCalendar {
 }
+
+/* delete button */
+
+.btn {
+  outline: none;
+  display: block;
+  border: solid 1px red;
+  color: red;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 30px;
+  background: #373f51;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  margin: 5px;
+}
+
+.btn:focus {
+  background-color: red;
+  color: #373f51;
+}
+
+.btn:active {
+  background: #373f51;
+  color: red;
+  border: solid 1px red;
+}
+
+.btn:hover {
+  background-color: red;
+  color: #373f51;
+}
+
+/* edit button */
+
+.editBtn {
+  outline: none;
+  display: block;
+  border: solid 1px green;
+  color: green;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 30px;
+  background: #373f51;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  margin: 5px;
+}
+
+.editBtn:focus {
+  background-color: green;
+  color: #373f51;
+}
+
+.editBtn:active {
+  background: #373f51;
+  color: green;
+  border: solid 1px green;
+}
+
+.editBtn:hover {
+  background-color: green;
+  color: white;
+}
+
+/* modals */
+
+.groupPage-modals {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-tempplate-rows: auto;
+}

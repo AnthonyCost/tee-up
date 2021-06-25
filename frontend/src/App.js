@@ -8,6 +8,7 @@ import GroupsContainer from "./components/GroupsContainer/GroupsContainer";
 import GroupPage from "./components/GroupPage/GroupPage";
 import HomePage from "./components/HomePage";
 import CreateGroupForm from "./components/CreateGroupForm/CreateGroupForm";
+import EditGroupForm from "./components/EditGroupForm/EditGroupForm";
 
 function App() {
   const dispatch = useDispatch();

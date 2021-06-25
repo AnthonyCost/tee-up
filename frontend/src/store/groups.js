@@ -3,6 +3,7 @@ import { csrfFetch } from "./csrf";
 const SET_GROUPS = "groups/SET_GROUPS";
 const GRAB_GROUP = "groups/GRAB_GROUP";
 const CREATE_GROUP = "groups/CREATE_GROUP";
+const DELETE_GROUP = "groups/DELETE_GROUP";
 
 // Define Action Creators
 const setGroups = (groups) => ({
@@ -18,6 +19,11 @@ const setOneGroup = (group) => ({
 const addGroup = (group) => ({
   type: CREATE_GROUP,
   group,
+});
+
+const deleteSelectedGroup = (groupId) => ({
+  type: DELETE_GROUP,
+  groupId,
 });
 
 // Define Thunk creators
@@ -54,6 +60,32 @@ export const grabGroup = (groupId) => async (dispatch) => {
   dispatch(setOneGroup(group));
 };
 
+export const updateGroup = (payload) => async (dispatch) => {
+  const id = payload.id;
+  const response = await csrfFetch(`/api/groups/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+
+  if (response.ok) {
+    const updatedGroup = await response.json();
+    dispatch(addGroup(updatedGroup));
+    return updatedGroup;
+  }
+};
+
+export const deleteGroup = (payload) => async (dispatch) => {
+  const { id } = payload;
+  const response = await csrfFetch(`/api/groups/${id}`, {
+    method: "DELETE",
+  });
+
+  if (response.ok) {
+    dispatch(deleteSelectedGroup(id));
+  }
+};
+
 // Define an initial state
 const initialState = {};
 
@@ -69,12 +101,15 @@ const groupsReducer = (state = initialState, action) => {
         ...state,
         ...allGroups,
       };
-    // case UPDATE_GROUP:
     case GRAB_GROUP:
       return {
         ...state,
         [action.group.id]: action.group,
       };
+    case DELETE_GROUP:
+      const newState = { ...state };
+      delete newState[action.groupId];
+      return newState;
     case CREATE_GROUP:
       if (!state[action.group.id]) {
         const newState = {

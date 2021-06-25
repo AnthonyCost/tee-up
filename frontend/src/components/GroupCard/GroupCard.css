@@ -1,12 +1,24 @@
 /* Cards */
 
+.addGroupBtn p {
+  transition: 0.4s;
+  animation: ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.addGroupBtn:hover p {
+  background-color: #4c956c;
+}
+
 .groupContainer {
   width: 75%;
-  margin: auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
   column-gap: 10px;
   row-gap: 15px;
-  justify-items: center;
 }
 
 .cardContainer {
