@@ -54,6 +54,21 @@ export const grabGroup = (groupId) => async (dispatch) => {
   dispatch(setOneGroup(group));
 };
 
+export const updateGroup = (payload) => async (dispatch) => {
+  const id = payload.id;
+  const response = await fetch(`/api/groups/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+
+  if (response.ok) {
+    const updatedGroup = await response.json();
+    dispatch(addGroup(updatedGroup));
+    return updatedGroup;
+  }
+};
+
 // Define an initial state
 const initialState = {};
 
