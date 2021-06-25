@@ -1,18 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { editGroup } from "../../store/groups";
 import { useHistory } from "react-router-dom";
 
 import "./EditGroupForm.css";
 
-const CreateGroupForm = () => {
+const EditGroupForm = ({ group }) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [playStyle, setPlayStyle] = useState("");
-  const [description, setDescription] = useState("");
-  const [groupName, setGroupName] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
+  const [playStyle, setPlayStyle] = useState(group.playStyle);
+  const [description, setDescription] = useState(group.description);
+  const [groupName, setGroupName] = useState(group.groupName);
+  const [imageUrl, setImageUrl] = useState(group.imageUrl);
 
   const updatePlayStyle = (e) => setPlayStyle(e.target.value);
   const updateDescription = (e) => setDescription(e.target.value);
@@ -47,39 +47,38 @@ const CreateGroupForm = () => {
 
   const handleCancelClick = (e) => {
     e.preventDefault();
-    history.push(`/groups`);
-    // hideForm();
+    history.push(`/groups/${group.id}`);
   };
 
   return (
-    <div className="newGroup-container">
-      <div className="newGroup-banner">
-        <h1>Create a Group</h1>
+    <div className="EditGroup-container">
+      <div className="EditGroup-banner">
+        <h1>Edit Group</h1>
       </div>
       <form onSubmit={handleSubmit}>
         <input
           type="string"
-          placeholder="Name of Group"
+          placeholder={group?.groupName}
           required
           value={groupName}
           onChange={updateGroupName}
         />
         <input
           type="string"
-          placeholder="Play Style"
+          placeholder={group?.playStyle}
           required
           value={playStyle}
           onChange={updatePlayStyle}
         />
         <input
           type="text"
-          placeholder="Description of group"
+          placeholder={group?.description}
           value={description}
           onChange={updateDescription}
         />
         <input
           type="string"
-          placeholder="Image URL"
+          placeholder={group?.imageUrl}
           value={imageUrl}
           onChange={updateImageUrl}
         />
@@ -92,4 +91,4 @@ const CreateGroupForm = () => {
   );
 };
 
-export default CreateGroupForm;
+export default EditGroupForm;
