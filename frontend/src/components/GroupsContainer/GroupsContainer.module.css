@@ -1,9 +1,5 @@
-.groupContainer {
-  width: 75%;
-  margin: auto;
+.addGroupBtn p {
   display: flex;
   align-items: center;
-  column-gap: 10px;
-  row-gap: 15px;
-  justify-items: center;
+  justify-content: space-around;
 }

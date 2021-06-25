@@ -1,12 +1,18 @@
 /* Cards */
 
+.addGroupBtn p {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .groupContainer {
   width: 75%;
-  margin: auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 600px 600px 600px;
+  grid-template-rows: auto;
   column-gap: 10px;
   row-gap: 15px;
-  justify-items: center;
 }
 
 .cardContainer {
