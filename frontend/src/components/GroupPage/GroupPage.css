@@ -52,6 +52,7 @@
   background: #373f51;
   cursor: pointer;
   transition: all 0.3s linear;
+  margin: 5px;
 }
 
 .btn:focus {
@@ -84,6 +85,7 @@
   background: #373f51;
   cursor: pointer;
   transition: all 0.3s linear;
+  margin: 5px;
 }
 
 .editBtn:focus {
@@ -100,4 +102,12 @@
 .editBtn:hover {
   background-color: green;
   color: white;
+}
+
+/* modals */
+
+.groupPage-modals {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-tempplate-rows: auto;
 }
