@@ -1,9 +1,15 @@
 /* Cards */
 
 .addGroupBtn p {
+  transition: 0.4s;
+  animation: ease-in-out;
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+.addGroupBtn:hover p {
+  background-color: #4c956c;
 }
 
 .groupContainer {
