@@ -1,6 +1,6 @@
 // Import hooks from 'react'. Which hook is meant for causing effects?
 // Import hooks from 'react-redux'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import DeleteGroupModal from "../DeleteGroupModal";
@@ -48,10 +48,20 @@ const GroupPage = () => {
           </div>
         </div>
         <div className="groupPagePlaystyle">
-          <h5>{group?.playStyle}</h5>
+          <div>
+            <h4>PlayStyle</h4>
+          </div>
+          <div>
+            <h5>{group?.playStyle}</h5>
+          </div>
         </div>
         <div className="groupPageDescription">
-          <p>{group?.description}</p>
+          <div className="groupPageDescriptionTitle">
+            <h5>Description</h5>
+          </div>
+          <div>
+            <p>{group?.description}</p>
+          </div>
         </div>
         <div className="upcomingRoundDiv">
           <div className="upcomingRound-Title">
