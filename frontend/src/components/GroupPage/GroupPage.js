@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useParams, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import EditFormModal from "../EditGroupModal";
+// import DeleteGroupModal from "../DeleteGroupModal";
 
 import { grabGroup } from "../../store/groups";
 import "./GroupPage.css";
@@ -41,9 +42,7 @@ const GroupPage = () => {
         <div>
           <EditFormModal />
         </div>
-        {/* <div>
-          <DeleteFormModal />
-        </div> */}
+        <div>{/* <DeleteGroupModal /> */}</div>
         <div className="groupPagePlaystyle">
           <h5>{group?.playStyle}</h5>
         </div>
