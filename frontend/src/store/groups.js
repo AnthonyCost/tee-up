@@ -21,9 +21,9 @@ const addGroup = (group) => ({
   group,
 });
 
-const deleteSelectedGroup = (group) => ({
+const deleteSelectedGroup = (groupId) => ({
   type: DELETE_GROUP,
-  group,
+  groupId,
 });
 
 // Define Thunk creators
@@ -108,10 +108,8 @@ const groupsReducer = (state = initialState, action) => {
       };
     case DELETE_GROUP:
       const newState = { ...state };
-      delete newState[action.payload];
-      return {
-        newState,
-      };
+      delete newState[action.groupId];
+      return newState;
     case CREATE_GROUP:
       if (!state[action.group.id]) {
         const newState = {

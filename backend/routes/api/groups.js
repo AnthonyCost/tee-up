@@ -63,11 +63,6 @@ router.delete(
     const groupId = parseInt(id);
     const group = await Group.findByPk(groupId);
     await group.destroy();
-    // await Group.destroy(req.body, {
-    //   where: {
-    //     id: groupId,
-    //   },
-    // });
     res.send(200);
   })
 );
