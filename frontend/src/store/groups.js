@@ -76,7 +76,7 @@ export const updateGroup = (payload) => async (dispatch) => {
 };
 
 export const deleteGroup = (payload) => async (dispatch) => {
-  const id = payload;
+  const { id } = payload;
   const response = await csrfFetch(`/api/groups/${id}`, {
     method: "DELETE",
   });
