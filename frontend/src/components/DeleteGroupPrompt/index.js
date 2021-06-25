@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteGroup, grabGroup } from "../../store/groups";
+import { deleteGroup } from "../../store/groups";
 import { useParams } from "react-router";
 import { useHistory } from "react-router-dom";
 
@@ -20,20 +20,13 @@ const EditGroupForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // const payload = {
-    //   id,
-    //   hostUserId: currentUserId,
-    //   playStyle,
-    //   description,
-    //   groupName,
-    //   imageUrl,
-    // };
+    const payload = {
+      id,
+    };
 
-    // let updatedGroup = await dispatch(updateGroup(payload));
-    // if (updatedGroup) {
-    //   dispatch(grabGroup(id));
-    //   history.push(`/groups/${id}`);
-    // }
+    await dispatch(deleteGroup(payload));
+
+    history.push(`/groups`);
   };
 
   const handleCancelClick = (e) => {

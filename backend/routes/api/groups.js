@@ -61,12 +61,14 @@ router.delete(
   asyncHandler(async (req, res) => {
     const { id } = req.params;
     const groupId = parseInt(id);
-    const deleteSelectedGroup = await Group.destroy(req.body, {
-      where: {
-        id: groupId,
-      },
-    });
-    res.json(deleteSelectedGroup);
+    const group = await Group.findByPk(groupId);
+    await Group.destroy(group);
+    // await Group.destroy(req.body, {
+    //   where: {
+    //     id: groupId,
+    //   },
+    // });
+    res.send(200);
   })
 );
 
