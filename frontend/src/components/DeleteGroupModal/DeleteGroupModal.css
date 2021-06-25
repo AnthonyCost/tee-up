@@ -1,0 +1,29 @@
+.btn {
+  outline: none;
+  display: block;
+  border: solid 1px red;
+  color: red;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 30px;
+  background: #373f51;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.btn:focus {
+  background-color: red;
+  color: #373f51;
+}
+
+.btn:hover {
+  background-color: red;
+  color: #373f51;
+}
+
+.btn:active {
+  background: #373f51;
+  color: red;
+  border: solid 1px red;
+}
