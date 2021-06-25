@@ -38,7 +38,7 @@ const GroupPage = () => {
           <h3>Host: {group?.host?.username}</h3>
         </div>
         <div className="groupEditInfoButton">
-          <NavLink to={`/edit${group?.id}`}>
+          <NavLink to={`/editGroup/${group?.id}`}>
             <p>Edit Group Info</p>
           </NavLink>
         </div>

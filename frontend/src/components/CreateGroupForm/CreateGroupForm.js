@@ -21,13 +21,12 @@ const CreateGroupForm = () => {
   const updateImageUrl = (e) => setImageUrl(e.target.value);
 
   const currentUser = useSelector((state) => state.session.user);
-  if (currentUser === null) {
-    console.log("we can't be = here");
-    history.push(`/groups`);
-  }
+  // if (currentUser === null) {
+  //   console.log("we can't be = here");
+  //   history.push(`/groups`);
+  // }
   const currentUserId = currentUser.id;
   const handleSubmit = async (e) => {
-    // hello!
     e.preventDefault();
 
     const payload = {
