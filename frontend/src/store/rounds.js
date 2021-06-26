@@ -6,7 +6,7 @@ const CREATE_ROUND = "rounds/CREATE_ROUND";
 const DELETE_ROUND = "rounds/DELETE_ROUND";
 
 // Define Action Creators
-const getRounds = (rounds) => ({
+const getAllRounds = (rounds) => ({
   type: GET_ROUNDS,
   rounds,
 });
@@ -51,7 +51,7 @@ export const createRound = (payload) => async (dispatch) => {
 export const getRounds = () => async (dispatch) => {
   const res = await csrfFetch("/api/rounds");
   const rounds = await res.json();
-  dispatch(getRounds(rounds));
+  dispatch(getAllRounds(rounds));
 };
 
 export const grabRound = (roundId) => async (dispatch) => {

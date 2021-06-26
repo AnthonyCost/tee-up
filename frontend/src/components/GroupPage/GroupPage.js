@@ -8,7 +8,7 @@ import EditFormModal from "../EditGroupModal";
 
 import { grabGroup } from "../../store/groups";
 import "./GroupPage.css";
-
+import RoundsList from "../RoundsList";
 // import other data here
 
 const GroupPage = () => {
@@ -73,7 +73,7 @@ const GroupPage = () => {
             </NavLink>
           </div>
           <div className="upcomingRounds">
-            <p>Map all upcoming round components</p>
+            <RoundsList />
           </div>
         </div>
       </div>
