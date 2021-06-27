@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import RoundTab from "./RoundTab";
 // useParams to grab groupId and then match it where groupId === group.id of selected page
 // that way we only map the rounds that are assigned to the delegated group
 
 import { getRounds } from "../../store/rounds";
+import RoundTab from "../RoundTab";
 import "./RoundsList.css";
 
 const RoundsList = () => {
