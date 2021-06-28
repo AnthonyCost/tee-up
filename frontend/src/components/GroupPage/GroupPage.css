@@ -28,39 +28,15 @@
 
 .groupPageTitle {
   text-decoration: underline;
-  font-size: 4rem;
 }
 .groupPageHost {
 }
-
-.upcomingRound-Title h2{
-  font-size: 2rem;
-}
-
 .groupPagePlaystyle {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  margin: 10px;
-}
-.groupPagePlaystyle h5{
-  padding-left: 10px;
 }
 .groupPageDescription {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
 }
-
-.groupPageDescriptionTitle h3{
-  display: flex;
-  justify-content: space-around;
-  align-self: center;
+.groupPageCalendar {
 }
-
-
-/* .groupPageCalendar {
-} */
 
 /* delete button */
 
