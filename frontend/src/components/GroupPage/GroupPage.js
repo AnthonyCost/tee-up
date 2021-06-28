@@ -49,7 +49,7 @@ const GroupPage = () => {
         </div>
         <div className="groupPagePlaystyle">
           <div>
-            <h4>PlayStyle</h4>
+            <h4>PlayStyle: </h4>
           </div>
           <div>
             <h5>{group?.playStyle}</h5>
@@ -57,7 +57,7 @@ const GroupPage = () => {
         </div>
         <div className="groupPageDescription">
           <div className="groupPageDescriptionTitle">
-            <h5>Description</h5>
+            <h3>Description</h3>
           </div>
           <div>
             <p>{group?.description}</p>
