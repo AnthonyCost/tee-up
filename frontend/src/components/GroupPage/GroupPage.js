@@ -1,6 +1,6 @@
 // Import hooks from 'react'. Which hook is meant for causing effects?
 // Import hooks from 'react-redux'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import DeleteGroupModal from "../DeleteGroupModal";
@@ -8,7 +8,7 @@ import EditFormModal from "../EditGroupModal";
 
 import { grabGroup } from "../../store/groups";
 import "./GroupPage.css";
-
+import RoundsList from "../RoundsList";
 // import other data here
 
 const GroupPage = () => {
@@ -48,10 +48,20 @@ const GroupPage = () => {
           </div>
         </div>
         <div className="groupPagePlaystyle">
-          <h5>{group?.playStyle}</h5>
+          <div>
+            <h4>PlayStyle</h4>
+          </div>
+          <div>
+            <h5>{group?.playStyle}</h5>
+          </div>
         </div>
         <div className="groupPageDescription">
-          <p>{group?.description}</p>
+          <div className="groupPageDescriptionTitle">
+            <h5>Description</h5>
+          </div>
+          <div>
+            <p>{group?.description}</p>
+          </div>
         </div>
         <div className="upcomingRoundDiv">
           <div className="upcomingRound-Title">
@@ -59,11 +69,11 @@ const GroupPage = () => {
           </div>
           <div className="upcomingRound-addRoundButton">
             <NavLink to={`/addRound${group?.id}`}>
-              <p>Add Rounds</p>
+              <p>Add Round</p>
             </NavLink>
           </div>
           <div className="upcomingRounds">
-            <p>Map all upcoming round components</p>
+            <RoundsList group={group}/>
           </div>
         </div>
       </div>

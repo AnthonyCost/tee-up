@@ -1,15 +1,34 @@
 /* Cards */
 
 .addGroupBtn p {
-  transition: 0.4s;
-  animation: ease-in-out;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 30px;
+  border: solid 1px blue;
   display: flex;
-  align-items: center;
+  animation: ease-in-out;
   justify-content: space-around;
+  color: white;
+  background: blue;
+  transition: all 0.3s linear;
 }
 
-.addGroupBtn:hover p {
-  background-color: #4c956c;
+.addGroupBtn p:hover {
+  background: none;
+  color: blue;
+}
+
+.addGroupBtn p:focus {
+  background: none;
+  color: blue;
+}
+
+.addGroupBtn p:active {
+  background: #373f51;
+  color: blue;
+  border: solid 1px blue;
 }
 
 .groupContainer {
@@ -64,8 +83,17 @@
 }
 
 .cardBtn p {
+  outline: none;
+  border: solid 1px green;
   color: white;
-  margin-bottom: 0%;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 30px;
+  background: green;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  margin: 5px;
   text-decoration: none;
   transition: 0.4s;
   animation: ease-in-out;
@@ -74,5 +102,6 @@
 }
 
 .cardBtn:hover p {
-  background-color: #4c956c;
+  background-color: #373f51;
+  color: green;
 }

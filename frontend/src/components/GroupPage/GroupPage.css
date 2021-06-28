@@ -104,6 +104,39 @@
   color: white;
 }
 
+/* upcomingRound-addRoundButton */
+
+.upcomingRound-addRoundButton p {
+  outline: none;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 30px;
+  border: solid 1px blue;
+  display: flex;
+  animation: ease-in-out;
+  justify-content: space-around;
+  color: white;
+  background: blue;
+  transition: all 0.3s linear;
+}
+
+.upcomingRound-addRoundButton p:hover {
+  background: none;
+  color: blue;
+}
+
+.upcomingRound-addRoundButton p:focus {
+  background: none;
+  color: blue;
+}
+
+.upcomingRound-addRoundButton p:active {
+  background: #373f51;
+  color: blue;
+  border: solid 1px blue;
+}
+
 /* modals */
 
 .groupPage-modals {

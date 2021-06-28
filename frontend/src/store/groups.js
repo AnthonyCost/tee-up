@@ -4,6 +4,7 @@ const SET_GROUPS = "groups/SET_GROUPS";
 const GRAB_GROUP = "groups/GRAB_GROUP";
 const CREATE_GROUP = "groups/CREATE_GROUP";
 const DELETE_GROUP = "groups/DELETE_GROUP";
+const GET_ROUNDS = "groups/GET_ROUNDS";
 
 // Define Action Creators
 const setGroups = (groups) => ({
@@ -25,6 +26,11 @@ const deleteSelectedGroup = (groupId) => ({
   type: DELETE_GROUP,
   groupId,
 });
+
+const getAllRounds = (rounds) => ({
+  type: GET_ROUNDS,
+  rounds
+})
 
 // Define Thunk creators
 export const createGroup = (payload) => async (dispatch) => {
@@ -53,6 +59,15 @@ export const getGroups = () => async (dispatch) => {
   const groups = await res.json();
   dispatch(setGroups(groups));
 };
+
+export const getRounds = (groupId) => async (dispatch) => {
+  const res = await csrfFetch(`/api/groups/${groupId}/rounds`);
+  
+  if (res.ok)
+  {const rounds = await res.json();
+  dispatch(getAllRounds(rounds));
+  return rounds}
+}
 
 export const grabGroup = (groupId) => async (dispatch) => {
   const res = await csrfFetch(`/api/groups/${groupId}`);
@@ -119,8 +134,13 @@ const groupsReducer = (state = initialState, action) => {
         return newState;
       }
       break;
-    default:
-      return state;
+      case GET_ROUNDS:
+        return {
+          ...state,
+          rounds : action.rounds
+        };
+        default:
+          return state;
   }
 };
 // Export the reducer

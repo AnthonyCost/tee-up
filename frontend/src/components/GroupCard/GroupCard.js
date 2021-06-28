@@ -22,7 +22,7 @@ const GroupCard = ({ group }) => {
         <h3>Hosted by: {group?.host?.username}</h3>
       </div>
       <div className="cardDescription">
-        <p>{group?.description}</p>
+        <p>Description:{group?.description}</p>
       </div>
       <div className="cardBtn">
         <NavLink to={`/groups/${group.id}`}>

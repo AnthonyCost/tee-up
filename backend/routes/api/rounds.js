@@ -6,7 +6,7 @@ const router = express.Router();
 const asyncHandler = require("express-async-handler");
 // Take a second to import the database stuff you'll need
 
-const { Group, User, Round, GolfCourse } = require("../../db/models");
+const { Round, Group, GolfCourse } = require("../../db/models");
 
 // require authMiddleware here if needed, (not needed here for the all groups page but definitely needed for the individual group pages)
 
@@ -17,46 +17,47 @@ const { Group, User, Round, GolfCourse } = require("../../db/models");
 router.get(
   "/",
   asyncHandler(async (req, res) => {
-    const groups = await Group.findAll({
+    const rounds = await Round.findAll({
       include: {
         model: User,
         as: "host",
       },
     });
-    res.json(groups);
-  })
-);
-
-router.get(
-  "/:id/rounds",
-  asyncHandler(async (req, res) => {
-    const { id } = req.params;
-    const groupId = parseInt(id);
-    const rounds = await Round.findAll(
-      {
-            where: {
-              groupId : groupId
-            }, 
-              include: [{ model: GolfCourse }], 
-          
-        }
-    );
     res.json(rounds);
   })
 );
+
+// router.get(
+//   "/all/:groupId",
+//   asyncHandler(async (req, res) => {
+//     const { groupId } = parseInt(req.params.groupId, 10);
+//     let test = await Group.findByPk(
+//       { groupId },
+//       {
+//         include: [
+//           {
+//             model: Round,
+//             include: [{ model: GolfCourse }],
+//           },
+//         ],
+//       }
+//     );
+//     res.json(test);
+//   })
+// );
 
 router.get(
   "/:id",
   asyncHandler(async (req, res) => {
     const { id } = req.params;
-    const groupId = parseInt(id);
-    const group = await Group.findByPk(groupId, {
+    const roundId = parseInt(id);
+    const round = await Round.findByPk(roundId, {
       include: {
         model: User,
         as: "host",
       },
     });
-    res.json(group);
+    res.json(round);
   })
 );
 
@@ -64,13 +65,13 @@ router.put(
   "/:id",
   asyncHandler(async (req, res) => {
     const { id } = req.params;
-    const groupId = parseInt(id);
-    const updatedGroup = await Group.update(req.body, {
+    const roundId = parseInt(id);
+    const updatedRound = await Round.update(req.body, {
       where: {
         id: groupId,
       },
     });
-    res.json(updatedGroup);
+    res.json(updatedRound);
   })
 );
 
@@ -78,9 +79,9 @@ router.delete(
   "/:id",
   asyncHandler(async (req, res) => {
     const { id } = req.params;
-    const groupId = parseInt(id);
-    const group = await Group.findByPk(groupId);
-    await group.destroy();
+    const roundId = parseInt(id);
+    const round = await Round.findByPk(roundId);
+    await round.destroy();
     res.send(200);
   })
 );
@@ -88,17 +89,15 @@ router.delete(
 router.post(
   "/",
   asyncHandler(async (req, res) => {
-    let { hostUserId, playStyle, description, groupName, imageUrl } = req.body;
-    hostUserId = Number(hostUserId);
-    console.log(hostUserId);
-    const newGroup = await Group.create({
-      hostUserId,
-      playStyle,
-      description,
-      groupName,
-      imageUrl,
+    let { courseId, groupId, ruleset, startTime, holes } = req.body;
+    const newRound = await Round.create({
+      courseId,
+      groupId,
+      ruleset,
+      startTime,
+      holes,
     });
-    res.json(newGroup);
+    res.json(newRound);
   })
 );
 
