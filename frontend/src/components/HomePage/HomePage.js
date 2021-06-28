@@ -6,10 +6,10 @@ const HomePage = () => {
       <div className="welcomeSplashContainer">
         <div className="welcomeSplashBackground">
           <span>
-          </span>
             <div className="welcomeBanner">
               <h1>Welcome to Tee Up</h1>
             </div>
+          </span>
         </div>
       </div>
       <div className="upperBlock">

@@ -1,19 +1,14 @@
 .welcomeSplashContainer {
-
 }
 
 .welcomeSplashBackground {
+  /* position: fixed; */
+  /* filter: blur(7px); */
+  /* z-index: -1; */
   background-image: url("https://images.unsplash.com/photo-1604702686571-f03d002a7c53?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1976&q=80");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-self: center;
-  align-items: center;
-  height: auto;
-  left: 0;
-  right: 0;
 }
 .welcomeSplashBackground span {
   display: flex;
@@ -21,22 +16,14 @@
   padding-top: 50%;
 }
 .welcomeBanner {
-  font-size: 5rem;
-  margin-top: auto;
-  margin-bottom: auto;
-  position: relative;
-  text-transform: uppercase;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-  overflow: hidden;
-  background-color: rgba(6, 5, 22, 0.377);
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  filter: blur(0);
+  z-index: 1;
 }
 
 .textBlock {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
   background-color: #373f51;
 }
 
@@ -65,12 +52,5 @@
 }
 
 .lowerBlock img {
- padding-top: 25%;
-  width: auto;
-  height: 50%;
+  /* height: 50%; */
 }
-.upperBlock img {
-  padding-top: 25%;
-   width: auto;
-   height: 50%;
- }

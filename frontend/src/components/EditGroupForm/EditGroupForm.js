@@ -82,8 +82,8 @@ const EditGroupForm = () => {
           value={imageUrl}
           onChange={updateImageUrl}
         />
-        <button className="btn-submit" type="submit">Update Group</button>
-        <button className="btn-cancel" type="button" onClick={handleCancelClick}>
+        <button type="submit">Update Group</button>
+        <button type="button" onClick={handleCancelClick}>
           Cancel
         </button>
       </form>
