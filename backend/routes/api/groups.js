@@ -32,7 +32,7 @@ router.get(
   asyncHandler(async (req, res) => {
     const { groupId } = parseInt(req.params.groupId, 10);
     let rounds = await Group.findByPk(
-      { groupId },
+       groupId ,
       {
         include: [
           {

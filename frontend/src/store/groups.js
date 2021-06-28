@@ -62,8 +62,11 @@ export const getGroups = () => async (dispatch) => {
 
 export const getRounds = (groupId) => async (dispatch) => {
   const res = await csrfFetch(`/api/groups/${groupId}/rounds`);
-  const rounds = await res.json();
+  
+  if (res.ok)
+  {const rounds = await res.json();
   dispatch(getAllRounds(rounds));
+  return rounds}
 }
 
 export const grabGroup = (groupId) => async (dispatch) => {
@@ -132,18 +135,12 @@ const groupsReducer = (state = initialState, action) => {
       }
       break;
       case GET_ROUNDS:
-        const allRounds = {};
-        action.rounds.forEach((round, group) => {
-          if(round.groupId === group.id) {
-            allRounds[round.id] = round;
-          }
-        });
         return {
           ...state,
-          ...allRounds,
+          rounds : action.rounds
         };
-    default:
-      return state;
+        default:
+          return state;
   }
 };
 // Export the reducer
