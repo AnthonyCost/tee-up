@@ -9,28 +9,23 @@ import RoundTab from "../RoundTab";
 import "./RoundsList.css";
 
 const RoundsList = () => {
-const { currGroupId } = useParams();
+const { id } = useParams();
 const dispatch = useDispatch();
 
 const rounds = useSelector((state) => state.rounds);
-console.log(rounds);
 
-  // const currGroupId = currentGroup.id
-  const [roundsArray, setRoundsArray] = useState([]);
+const [roundsArray, setRoundsArray] = useState([]);
 
   useEffect(async () => {
       const testArray = []
-      const testGroupRounds = await dispatch(getRounds(currGroupId));
+      const testGroupRounds = await dispatch(getRounds(id));
       Object.values(testGroupRounds).forEach(round => {
           testArray.push(round)
       })
+      console.log(testArray);
       setRoundsArray(testArray)
   }, [dispatch])
 
-
-// Declare variables from hooks
-// const groupId = group.params.id;
-// const rounds = useSelector((state) => state.group.rounds.find( group => group.id === groupId));
 
 // useEffect(() => {
   //   dispatch(getRounds());
@@ -39,9 +34,9 @@ console.log(rounds);
   return (
     <div>
       <div className="RoundsList">
-      {/* {roundsArray?.map((round) => (
+      {roundsArray?.map((round) => (
           <RoundTab round={round}/>
-      ))} */}
+      ))}
       </div>
     </div>
   );

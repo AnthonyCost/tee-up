@@ -6,7 +6,7 @@ const router = express.Router();
 const asyncHandler = require("express-async-handler");
 // Take a second to import the database stuff you'll need
 
-const { Group, User, Round } = require("../../db/models");
+const { Group, User, Round, GolfCourse } = require("../../db/models");
 
 // require authMiddleware here if needed, (not needed here for the all groups page but definitely needed for the individual group pages)
 
@@ -28,10 +28,11 @@ router.get(
 );
 
 router.get(
-  "/:groupId/rounds",
+  "/:id/rounds",
   asyncHandler(async (req, res) => {
-    const { groupId } = parseInt(req.params.groupId, 10);
-    let rounds = await Group.findByPk(
+    const { id } = req.params;
+    const groupId = parseInt(id);
+    const rounds = await Group.findByPk(
        groupId ,
       {
         include: [
