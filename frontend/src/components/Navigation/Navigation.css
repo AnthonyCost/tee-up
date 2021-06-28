@@ -3,10 +3,21 @@ Navbar hover: #4C956C */
 
 .navBar {
   display: flex;
+  align-items: flex-end;
+  flex-direction: row;
   justify-content: space-between;
+  overflow:visible;
   background-color: #2c6e49;
   margin: 0;
   padding: 2rem;
+}
+
+.navBarLink p{
+  color: whitesmoke;
+}
+
+.navBarLink {
+  text-decoration: none;
 }
 
 a {
