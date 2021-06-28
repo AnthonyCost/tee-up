@@ -1,5 +1,9 @@
 /* Cards */
 
+a {
+  text-decoration: none;
+}
+
 .addGroupBtn p {
   outline: none;
   font-size: 1rem;
@@ -80,6 +84,10 @@
 .cardDescription {
   display: flex;
   justify-content: center;
+}
+
+.cardBtn a{
+  text-decoration: none;
 }
 
 .cardBtn p {
