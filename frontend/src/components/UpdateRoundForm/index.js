@@ -72,14 +72,16 @@ const EditGroupForm = () => {
           onChange={updateRuleSet}
         />
         <input
-          type="text"
+          type='date'
           placeholder={round?.startTime}
           value={startTime}
           required
           onChange={updateStartTime}
         />
         <input
-          type="string"
+          type="number"
+          min= "1"
+          max= "36"
           placeholder={round?.holes}
           value={holes}
           required
