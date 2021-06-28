@@ -21,10 +21,6 @@ const CreateGroupForm = () => {
   const updateImageUrl = (e) => setImageUrl(e.target.value);
 
   const currentUser = useSelector((state) => state.session.user);
-  // if (currentUser === null) {
-  //   console.log("we can't be = here");
-  //   history.push(`/groups`);
-  // }
   const currentUserId = currentUser.id;
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,10 +32,8 @@ const CreateGroupForm = () => {
       groupName,
       imageUrl,
     };
-    console.log(payload);
 
     let createdGroup = await dispatch(createGroup(payload));
-    console.log(createdGroup);
     if (createdGroup) {
       history.push(`/groups/${createdGroup.id}`);
       // hideForm();

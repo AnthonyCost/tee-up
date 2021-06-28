@@ -24,8 +24,6 @@ const [roundsArray, setRoundsArray] = useState([]);
       setRoundsArray(testArray)
     }, [dispatch]);
 
-    console.log( "RA here !!!!!!",roundsArray)
-
   return (
     <div>
       <div className="RoundsList">
