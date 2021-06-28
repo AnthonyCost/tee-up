@@ -11,5 +11,8 @@
   "dependencies": {
     "mysql": "^2.18.1",
     "sequelize": "^6.6.2"
+  },
+  "engines": {
+    "node": "14.17.1"
   }
 }
