@@ -2,12 +2,12 @@ import "./RoundTab.css";
 
 const RoundTab = ({ round }) => {
 
-console.log("RoundTab here =====>",round[0])
+console.log("RoundTab here =====>",round)
 
   return (
     <div className="roundContainer">
       <div className="roundCourseContainer">
-        <h2>{round?.course?.name}
+        <h2>{round?.GolfCourse?.name}
         </h2>
       </div>
       <div className="roundRuleset">
