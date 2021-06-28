@@ -1,0 +1,38 @@
+form {
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+}
+
+  /* submit button */
+  .btn-submit {
+    text-transform: uppercase;
+    outline: none;
+    display: block;
+    border: solid 1px green;
+    color: green;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1;
+    border-radius: 30px;
+    background: #373f51;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    margin: 5px;
+  }
+  
+  .btn-submit:focus {
+    background-color: green;
+    color: #373f51;
+  }
+  
+  .btn-submit:active {
+    background: #373f51;
+    color: green;
+    border: solid 1px green;
+  }
+  
+  .btn-submit:hover {
+    background-color: green;
+    color: white;
+  }
