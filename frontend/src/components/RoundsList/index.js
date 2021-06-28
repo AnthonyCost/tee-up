@@ -12,7 +12,6 @@ const RoundsList = () => {
 const { id } = useParams();
 const dispatch = useDispatch();
 
-const rounds = useSelector((state) => state.rounds);
 
 const [roundsArray, setRoundsArray] = useState([]);
 
@@ -22,20 +21,16 @@ const [roundsArray, setRoundsArray] = useState([]);
       Object.values(testGroupRounds).forEach(round => {
           testArray.push(round)
       })
-      console.log(testArray);
       setRoundsArray(testArray)
-  }, [dispatch])
+    }, [dispatch]);
 
+    console.log( "RA here !!!!!!",roundsArray)
 
-// useEffect(() => {
-  //   dispatch(getRounds());
-  // }, [dispatch]);
-  
   return (
     <div>
       <div className="RoundsList">
       {roundsArray?.map((round) => (
-          <RoundTab round={round}/>
+          <RoundTab key={round.id} round={round}/>
       ))}
       </div>
     </div>

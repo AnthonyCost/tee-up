@@ -32,16 +32,14 @@ router.get(
   asyncHandler(async (req, res) => {
     const { id } = req.params;
     const groupId = parseInt(id);
-    const rounds = await Group.findByPk(
-       groupId ,
+    const rounds = await Round.findAll(
       {
-        include: [
-          {
-            model: Round,
-            include: [{ model: GolfCourse }],
-          },
-        ],
-      }
+            where: {
+              groupId : groupId
+            }, 
+              include: [{ model: GolfCourse }], 
+          
+        }
     );
     res.json(rounds);
   })

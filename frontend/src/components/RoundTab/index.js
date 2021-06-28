@@ -1,22 +1,8 @@
 import "./RoundTab.css";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router";
-
-import { getRounds } from "../../store/rounds";
 
 const RoundTab = ({ round }) => {
-  const { id } = useParams();
-  const dispatch = useDispatch();
-  const groupId = useSelector((state) => {
-    return state.groups[id];
-  });
 
-  useEffect(() => {
-    if (groupId) {
-      dispatch(getRounds(groupId));
-    }
-  }, [dispatch, id]);
+console.log("RoundTab here =====>",round[0])
 
   return (
     <div className="roundContainer">
