@@ -16,7 +16,8 @@
   padding-top: 50%;
 }
 .welcomeBanner {
-  margin: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
   display: flex;
   justify-content: center;
   filter: blur(0);
@@ -24,6 +25,11 @@
 }
 
 .textBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   background-color: #373f51;
 }
 
