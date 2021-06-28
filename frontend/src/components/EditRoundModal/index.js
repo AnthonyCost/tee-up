@@ -7,7 +7,7 @@ function EditRoundModal() {
 
   return (
     <>
-      <button className="editBtn" onClick={() => setShowModal(true)}>
+      <button className="editRoundBtn" onClick={() => setShowModal(true)}>
         Edit Round
       </button>
       {showModal && (

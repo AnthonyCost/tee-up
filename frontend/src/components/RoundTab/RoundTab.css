@@ -1,0 +1,11 @@
+.roundCourseContainer a{
+    text-decoration: none;
+    color: limegreen;
+    font-size: 4rem;
+}
+
+.roundCourseContainer a:visited{
+    text-decoration: none;
+    color: rgb(172, 179, 178);
+    font-size: 4rem;
+}

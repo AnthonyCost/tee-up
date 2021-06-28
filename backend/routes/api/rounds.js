@@ -68,7 +68,7 @@ router.put(
     const roundId = parseInt(id);
     const updatedRound = await Round.update(req.body, {
       where: {
-        id: groupId,
+        id: roundId,
       },
     });
     res.json(updatedRound);
