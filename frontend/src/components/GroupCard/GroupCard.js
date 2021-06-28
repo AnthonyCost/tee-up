@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 
 import "./GroupCard.css";
 
-const GroupCard = ({ group }) => {
+const GroupCard = ({  group }) => {
   return (
-    <div className="cardContainer">
+    <div  className="cardContainer">
       <div className="imageContainer">
         <img
           src={

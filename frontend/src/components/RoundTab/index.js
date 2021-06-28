@@ -5,8 +5,7 @@ const RoundTab = ({ round }) => {
   return (
     <div className="roundContainer">
       <div className="roundCourseContainer">
-        <h2>{round?.GolfCourse?.name}
-        </h2>
+        <a href={round?.GolfCourse?.url}>{round?.GolfCourse?.name}</a>
       </div>
       <div className="roundRuleset">
         <h3>{round?.ruleset}</h3>
