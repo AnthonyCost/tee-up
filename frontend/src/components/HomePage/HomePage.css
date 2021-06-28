@@ -1,4 +1,5 @@
 .welcomeSplashContainer {
+
 }
 
 .welcomeSplashBackground {
@@ -29,7 +30,7 @@
   text-transform: uppercase;
   box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.192);
+  background-color: rgba(6, 5, 22, 0.377);
 }
 
 .textBlock {
@@ -66,5 +67,12 @@
 }
 
 .lowerBlock img {
-  /* height: 50%; */
+ padding-top: 25%;
+  width: auto;
+  height: 50%;
 }
+.upperBlock img {
+  padding-top: 25%;
+   width: auto;
+   height: 50%;
+ }
